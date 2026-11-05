@@ -1,0 +1,6 @@
+Successfully registered URL "http://localhost:62579/" for site "Development Web Site" application "/"
+Registration completed
+Solicitud iniciada: "GET" http://localhost:62579/Default.aspx
+Response sent: http://localhost:62579/Default.aspx with HTTP status 500.0
+Solicitud iniciada: "GET" http://localhost:62579/Default.aspx
+Response sent: http://localhost:62579/Default.aspx with HTTP status 200.0

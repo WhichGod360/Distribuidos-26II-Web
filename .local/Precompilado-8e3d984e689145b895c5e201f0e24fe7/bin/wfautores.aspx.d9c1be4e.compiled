@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/Catalogo/wfAutores.aspx" hash="fffffff58834ac70" filehash="4e021a71deb8e9f6" flags="110000" assembly="App_Web_hsgo5nm1" type="ASP.catalogo_wfautores_aspx">
+    <filedeps>
+        <filedep name="/Catalogo/wfAutores.aspx" />
+        <filedep name="/pagWeb.Master" />
+    </filedeps>
+</preserve>

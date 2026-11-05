@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/pagWeb.Master" hash="fffffff58834ac70" filehash="3eca6c084032" flags="110000" assembly="App_Web_5eye1hjo" type="ASP.pagweb_master">
+    <filedeps>
+        <filedep name="/pagWeb.Master" />
+    </filedeps>
+</preserve>

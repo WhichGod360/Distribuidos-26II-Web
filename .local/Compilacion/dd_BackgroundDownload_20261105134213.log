@@ -1,0 +1,33 @@
+[696c:0001][2026-11-05T13:42:13] Creating new ExperimentationService
+[696c:0001][2026-11-05T13:42:13] Telemetry property VS.ABExp.Flights : lazytoolboxinit;fwlargebuffer;refactoring;spmoretempsbtn1;asloff;keybindgoldbarext;asynccsproj;vsfricheditor;completionapi;87ce9466:30775294;vswparallelinstallexpcf:31580306
+[696c:000b][2026-11-05T13:42:15] Telemetry property VS.SetupEngine.ActivityId : e5812539-1f42-482e-bea2-cd39c129dbf1
+[696c:000b][2026-11-05T13:42:15] Telemetry property VS.SetupEngine.IsChildProcess : False
+[696c:000b][2026-11-05T13:42:15] Telemetry property VS.SetupEngine.IsUpdateCheckOnly : True
+[696c:000b][2026-11-05T13:42:15] BEGIN: Update Check
+[696c:000b][2026-11-05T13:42:15] Getting singleton lock. Mutex name: Local\VsUpdateChecker
+[696c:000b][2026-11-05T13:42:15] Getting singleton lock succeed.
+[696c:000b][2026-11-05T13:42:15] BEGIN: Check for updates
+[696c:000b][2026-11-05T13:42:15] Telemetry property VS.SetupEngine.ChannelUpdateDisabled : False
+[696c:000b][2026-11-05T13:42:15] Authentication Environment variable setting value: null
+[696c:000b][2026-11-05T13:42:15] Authenticate: True
+[696c:001c][2026-11-05T13:42:16] Download requested: https://download.visualstudio.microsoft.com/download/pr/5f474104-723f-4007-bf4c-92e42a23dcc6/1dc7f92b19c3382eb61f9482001dff0d0817adf6e94a1d2a9e1a217633018130/SSMS.22.SSMS.Release.chman
+[696c:001d][2026-11-05T13:42:16] Attempting download 'https://download.visualstudio.microsoft.com/download/pr/5f474104-723f-4007-bf4c-92e42a23dcc6/1dc7f92b19c3382eb61f9482001dff0d0817adf6e94a1d2a9e1a217633018130/SSMS.22.SSMS.Release.chman' using engine 'WebClient'
+[696c:001d][2026-11-05T13:42:16] ManifestVerifier Result: Success
+[696c:001d][2026-11-05T13:42:16] Download of 'https://download.visualstudio.microsoft.com/download/pr/5f474104-723f-4007-bf4c-92e42a23dcc6/1dc7f92b19c3382eb61f9482001dff0d0817adf6e94a1d2a9e1a217633018130/SSMS.22.SSMS.Release.chman' succeeded using engine 'WebClient'
+[696c:0005][2026-11-05T13:42:16] Warning: El número de cargadores de arranque en el manifiesto de canal SSMS.22.SSMS.Release/22.11.3+12328.437 debe ser exactamente uno.
+[696c:0005][2026-11-05T13:42:16] El canal descargado C:\Users\altai\AppData\Local\Microsoft\VisualStudio\Packages\_Channels\ae49ed00\channelManifest.json es anterior al existente.
+[696c:0005][2026-11-05T13:42:16] Updated channel manifest: "https://aka.ms/ssms/22/release/channel" to version 22.11.12328.437.
+[696c:0005][2026-11-05T13:42:16] Downloading installable manifest from "https://download.visualstudio.microsoft.com/download/pr/5f474104-723f-4007-bf4c-92e42a23dcc6/244b80b4e68821937ee752eec3ee3925639f5c37f93dda547e65a5dc9d470096/SSMS.vsman" and using the channel URI "https://aka.ms/ssms/22/release/channel".
+[696c:0005][2026-11-05T13:42:16] Download requested: https://download.visualstudio.microsoft.com/download/pr/5f474104-723f-4007-bf4c-92e42a23dcc6/244b80b4e68821937ee752eec3ee3925639f5c37f93dda547e65a5dc9d470096/SSMS.vsman
+[696c:001c][2026-11-05T13:42:16] Attempting download 'https://download.visualstudio.microsoft.com/download/pr/5f474104-723f-4007-bf4c-92e42a23dcc6/244b80b4e68821937ee752eec3ee3925639f5c37f93dda547e65a5dc9d470096/SSMS.vsman' using engine 'WebClient'
+[696c:001c][2026-11-05T13:42:21] ManifestVerifier Result: Success
+[696c:001c][2026-11-05T13:42:21] Download of 'https://download.visualstudio.microsoft.com/download/pr/5f474104-723f-4007-bf4c-92e42a23dcc6/244b80b4e68821937ee752eec3ee3925639f5c37f93dda547e65a5dc9d470096/SSMS.vsman' succeeded using engine 'WebClient'
+[696c:001c][2026-11-05T13:42:23] DependencyComparer was created without a productArch. productArch will be ignored for dependency comparison.
+[696c:001c][2026-11-05T13:42:24] No restart manager available. Assuming no reboot required for instance state.
+[696c:001c][2026-11-05T13:42:24] END: Check for updates
+[696c:001c][2026-11-05T13:42:24] Update check only operation exits with code: 0
+[696c:001c][2026-11-05T13:42:24] END: Update Check
+[696c:001c][2026-11-05T13:42:24] Releasing singleton lock.
+[696c:001c][2026-11-05T13:42:24] Releasing singleton lock succeed.
+[696c:001c][2026-11-05T13:42:24] Releasing singleton lock.
+[696c:001c][2026-11-05T13:42:24] Singleton lock does not exist. Releasing singleton lock skipped.

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/Administracion/wfPenalizaciones.aspx" hash="fffffff58834ac70" filehash="7ef6099c2ab9f" flags="110000" assembly="App_Web_vyjzh41x" type="ASP.administracion_wfpenalizaciones_aspx">
+    <filedeps>
+        <filedep name="/Administracion/wfPenalizaciones.aspx" />
+        <filedep name="/pagWeb.Master" />
+    </filedeps>
+</preserve>

@@ -1,0 +1,92 @@
+Successfully registered URL "http://localhost:62578/" for site "Development Web Site" application "/"
+Registration completed
+Solicitud iniciada: "GET" http://localhost:62578/Default.aspx
+Response sent: http://localhost:62578/Default.aspx with HTTP status 200.0
+Solicitud iniciada: "GET" http://localhost:62578/Default.aspx
+Response sent: http://localhost:62578/Default.aspx with HTTP status 200.0
+Solicitud iniciada: "GET" http://localhost:62578/Estilos/biblioteca.css
+Solicitud iniciada: "GET" http://localhost:62578/Recursos/lecturae.png
+Response sent: http://localhost:62578/Estilos/biblioteca.css with HTTP status 200.0
+Response sent: http://localhost:62578/Recursos/lecturae.png with HTTP status 200.0
+Solicitud iniciada: "GET" http://localhost:62578/favicon.ico
+Response sent: http://localhost:62578/favicon.ico with HTTP status 404.0
+Solicitud iniciada: "GET" http://localhost:62578/
+Response sent: http://localhost:62578/ with HTTP status 302.0
+Solicitud iniciada: "GET" http://localhost:62578/Default.aspx?ReturnUrl=%2f
+Response sent: http://localhost:62578/Default.aspx?ReturnUrl=%2f with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Default.aspx?ReturnUrl=%2f
+Response sent: http://localhost:62578/Default.aspx?ReturnUrl=%2f with HTTP status 302.0
+Solicitud iniciada: "GET" http://localhost:62578/wfInicio.aspx
+Response sent: http://localhost:62578/wfInicio.aspx with HTTP status 200.0
+Solicitud iniciada: "GET" http://localhost:62578/Recursos/usuario.png
+Response sent: http://localhost:62578/Recursos/usuario.png with HTTP status 304.0
+Solicitud iniciada: "POST" http://localhost:62578/wfInicio.aspx
+Response sent: http://localhost:62578/wfInicio.aspx with HTTP status 302.0
+Solicitud iniciada: "GET" http://localhost:62578/Catalogo/wfLibros.aspx
+Solicitud iniciada: "POST" http://localhost:62578/wfInicio.aspx
+Response sent: http://localhost:62578/wfInicio.aspx with HTTP status 302.0
+Solicitud iniciada: "GET" http://localhost:62578/Catalogo/wfEjemplares.aspx
+Response sent: http://localhost:62578/Catalogo/wfLibros.aspx with HTTP status 200.0
+Response sent: http://localhost:62578/Catalogo/wfEjemplares.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Catalogo/wfEjemplares.aspx
+Response sent: http://localhost:62578/Catalogo/wfEjemplares.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Catalogo/wfEjemplares.aspx
+Response sent: http://localhost:62578/Catalogo/wfEjemplares.aspx with HTTP status 302.0
+Solicitud iniciada: "GET" http://localhost:62578/Default.aspx
+Response sent: http://localhost:62578/Default.aspx with HTTP status 200.0
+Solicitud iniciada: "GET" http://localhost:62578/Estilos/biblioteca.css
+Response sent: http://localhost:62578/Estilos/biblioteca.css with HTTP status 304.0
+Solicitud iniciada: "GET" http://localhost:62578/Seguridad/wfRecuperar.aspx
+Response sent: http://localhost:62578/Seguridad/wfRecuperar.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Seguridad/wfRecuperar.aspx
+Response sent: http://localhost:62578/Seguridad/wfRecuperar.aspx with HTTP status 302.0
+Solicitud iniciada: "GET" http://localhost:62578/Default.aspx
+Response sent: http://localhost:62578/Default.aspx with HTTP status 200.0
+Solicitud iniciada: "GET" http://localhost:62578/Seguridad/wfRecuperar.aspx
+Response sent: http://localhost:62578/Seguridad/wfRecuperar.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Seguridad/wfRecuperar.aspx
+Response sent: http://localhost:62578/Seguridad/wfRecuperar.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Seguridad/wfRecuperar.aspx
+Response sent: http://localhost:62578/Seguridad/wfRecuperar.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Seguridad/wfRecuperar.aspx
+Response sent: http://localhost:62578/Seguridad/wfRecuperar.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Seguridad/wfRecuperar.aspx
+Response sent: http://localhost:62578/Seguridad/wfRecuperar.aspx with HTTP status 302.0
+Solicitud iniciada: "GET" http://localhost:62578/Default.aspx
+Response sent: http://localhost:62578/Default.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Default.aspx
+Response sent: http://localhost:62578/Default.aspx with HTTP status 302.0
+Solicitud iniciada: "GET" http://localhost:62578/wfInicio.aspx
+Response sent: http://localhost:62578/wfInicio.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/wfInicio.aspx
+Response sent: http://localhost:62578/wfInicio.aspx with HTTP status 302.0
+Solicitud iniciada: "GET" http://localhost:62578/Catalogo/wfAutores.aspx
+Response sent: http://localhost:62578/Catalogo/wfAutores.aspx with HTTP status 200.0
+Solicitud iniciada: "GET" http://localhost:62578/.well-known/appspecific/com.chrome.devtools.json
+Response sent: http://localhost:62578/.well-known/appspecific/com.chrome.devtools.json with HTTP status 404.0
+Solicitud iniciada: "POST" http://localhost:62578/Catalogo/wfAutores.aspx
+Response sent: http://localhost:62578/Catalogo/wfAutores.aspx with HTTP status 302.0
+Solicitud iniciada: "GET" http://localhost:62578/Catalogo/wfEjemplares.aspx
+Response sent: http://localhost:62578/Catalogo/wfEjemplares.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Catalogo/wfEjemplares.aspx
+Response sent: http://localhost:62578/Catalogo/wfEjemplares.aspx with HTTP status 302.0
+Solicitud iniciada: "GET" http://localhost:62578/Catalogo/wfAutores.aspx
+Response sent: http://localhost:62578/Catalogo/wfAutores.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Catalogo/wfAutores.aspx
+Response sent: http://localhost:62578/Catalogo/wfAutores.aspx with HTTP status 200.0
+Solicitud iniciada: "GET" http://localhost:62578/Recursos/lecturae.png
+Response sent: http://localhost:62578/Recursos/lecturae.png with HTTP status 304.0
+Solicitud iniciada: "POST" http://localhost:62578/Catalogo/wfAutores.aspx
+Response sent: http://localhost:62578/Catalogo/wfAutores.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Catalogo/wfAutores.aspx
+Response sent: http://localhost:62578/Catalogo/wfAutores.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Catalogo/wfAutores.aspx
+Response sent: http://localhost:62578/Catalogo/wfAutores.aspx with HTTP status 302.0
+Solicitud iniciada: "GET" http://localhost:62578/Catalogo/wfAutores.aspx
+Response sent: http://localhost:62578/Catalogo/wfAutores.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Catalogo/wfAutores.aspx
+Response sent: http://localhost:62578/Catalogo/wfAutores.aspx with HTTP status 200.0
+Solicitud iniciada: "POST" http://localhost:62578/Catalogo/wfAutores.aspx
+Response sent: http://localhost:62578/Catalogo/wfAutores.aspx with HTTP status 302.0
+Solicitud iniciada: "GET" http://localhost:62578/Catalogo/wfAutores.aspx
+Response sent: http://localhost:62578/Catalogo/wfAutores.aspx with HTTP status 200.0
