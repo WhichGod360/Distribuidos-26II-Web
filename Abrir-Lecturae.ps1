@@ -15,8 +15,8 @@ $config = Join-Path $repo 'Distribuidos2026-II-Web\appWEB Distribuidos\Web.confi
 $xml.configuration.'system.web'.compilation.SetAttribute('tempDirectory', $aspnet)
 $xml.Save($config)
 $vswhere = Join-Path ${env:ProgramFiles(x86)} 'Microsoft Visual Studio\Installer\vswhere.exe'
-$visualStudio = & $vswhere -latest -products '*' -property productPath
+$visualStudio = & $vswhere -latest -products Microsoft.VisualStudio.Product.Community Microsoft.VisualStudio.Product.Professional Microsoft.VisualStudio.Product.Enterprise -property productPath
 if (-not $visualStudio -or -not (Test-Path -LiteralPath $visualStudio)) { throw 'No se encontró Visual Studio.' }
-# La nueva instancia hereda los temporales de D: sin cambiar ajustes globales de Windows.
+# La nueva instancia hereda los temporales de esta carpeta sin cambiar ajustes globales de Windows.
 Start-Process -FilePath $visualStudio -ArgumentList ('"' + $solucion + '"') -WindowStyle Normal
 

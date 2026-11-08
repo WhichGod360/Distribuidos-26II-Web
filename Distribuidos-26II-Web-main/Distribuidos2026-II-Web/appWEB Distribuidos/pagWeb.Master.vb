@@ -1,60 +1,38 @@
 Imports capaDatos
+Imports capaNegocio
+
 Public Class Site1
     Inherits System.Web.UI.MasterPage
+
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-        litUsuario.Text = If(SesionUsuario.IdUsuario > 0, SesionUsuario.NombreCompleto, "Invitado")
-        litRol.Text = If(SesionUsuario.IdUsuario > 0, SesionUsuario.Rol, "Sin sesión iniciada")
+        litUsuario.Text = SesionUsuario.NombreCompleto
+        litRol.Text = SesionUsuario.Rol
         Dim personal = SesionUsuario.EsPersonal
-        For Each boton As Button In {btnLibros, btnAutores, btnCategorias, btnPenalizaciones, btnEjemplares}
+        Dim admin = seguridadNegocio.PuedeGestionarUsuarios(SesionUsuario.IdUsuario, SesionUsuario.Rol)
+        For Each boton As Button In {btnBuscar, btnPrestamos, btnSolicitudes, btnLibros, btnEjemplares, btnAutores, btnCategorias, btnPenalizaciones, btnCargos}
             boton.Visible = personal
         Next
-        btnSalir.Visible = SesionUsuario.IdUsuario > 0
-        btnClave.Visible = SesionUsuario.IdUsuario > 0
-        Dim ruta = Request.AppRelativeCurrentExecutionFilePath.ToLowerInvariant()
-        For Each boton As Button In {btnMenuInicio, btnLibros, btnAutores, btnCategorias, btnPenalizaciones, btnEjemplares}
-            boton.CssClass = "menu-button"
+        btnUsuarios.Visible = admin
+        btnBitacora.Visible = admin
+        btnMiBiblioteca.Visible = seguridadNegocio.EsRolLector(SesionUsuario.Rol)
+        btnMenuInicio.Visible = personal
+        Dim ruta = Request.AppRelativeCurrentExecutionFilePath
+        For Each boton As Button In {btnMenuInicio, btnMiBiblioteca, btnBuscar, btnPrestamos, btnSolicitudes, btnLibros, btnEjemplares, btnAutores, btnCategorias, btnPenalizaciones, btnCargos, btnUsuarios, btnBitacora}
+            Dim destino = If(boton Is btnMenuInicio, "~/wfInicio.aspx", boton.CommandArgument)
+            boton.CssClass = "menu-button" & If(String.Equals(ruta, destino, StringComparison.OrdinalIgnoreCase), " selected", "")
         Next
-        If ruta.EndsWith("wflibros.aspx") Then
-            btnLibros.CssClass &= " selected"
-        ElseIf ruta.EndsWith("wfautores.aspx") Then
-            btnAutores.CssClass &= " selected"
-        ElseIf ruta.EndsWith("wfcategorias.aspx") Then
-            btnCategorias.CssClass &= " selected"
-        ElseIf ruta.EndsWith("wfpenalizaciones.aspx") Then
-            btnPenalizaciones.CssClass &= " selected"
-        ElseIf ruta.EndsWith("wfejemplares.aspx") Then
-            btnEjemplares.CssClass &= " selected"
-        Else
-            btnMenuInicio.CssClass &= " selected"
-        End If
     End Sub
     Private Sub Ir(ruta As String)
         Response.Redirect(ResolveUrl(ruta), False)
         Context.ApplicationInstance.CompleteRequest()
     End Sub
-    Protected Sub Inicio_Click(sender As Object, e As EventArgs) Handles btnMenuInicio.Click
-        Ir("~/wfInicio.aspx")
+    Protected Sub Inicio(sender As Object, e As EventArgs) Handles btnMenuInicio.Click
+        Ir(If(SesionUsuario.EsPersonal, "~/wfInicio.aspx", "~/Lector/wfMiBiblioteca.aspx"))
     End Sub
-    Protected Sub Libros_Click(sender As Object, e As EventArgs) Handles btnLibros.Click
-        Ir("~/Catalogo/wfLibros.aspx")
+    Protected Sub Menu(sender As Object, e As EventArgs) Handles btnMiBiblioteca.Click, btnBuscar.Click, btnPrestamos.Click, btnSolicitudes.Click, btnLibros.Click, btnEjemplares.Click, btnAutores.Click, btnCategorias.Click, btnPenalizaciones.Click, btnCargos.Click, btnUsuarios.Click, btnBitacora.Click
+        Ir(DirectCast(sender, Button).CommandArgument)
     End Sub
-    Protected Sub Autores_Click(sender As Object, e As EventArgs) Handles btnAutores.Click
-        Ir("~/Catalogo/wfAutores.aspx")
-    End Sub
-    Protected Sub Categorias_Click(sender As Object, e As EventArgs) Handles btnCategorias.Click
-        Ir("~/Catalogo/wfCategorias.aspx")
-    End Sub
-    Protected Sub Penalizaciones_Click(sender As Object, e As EventArgs) Handles btnPenalizaciones.Click
-        Ir("~/Administracion/wfPenalizaciones.aspx")
-    End Sub
-    Protected Sub Ejemplares_Click(sender As Object, e As EventArgs) Handles btnEjemplares.Click
-        Ir("~/Catalogo/wfEjemplares.aspx")
-    End Sub
-    Protected Sub Clave_Click(sender As Object, e As EventArgs) Handles btnClave.Click
-        AccesoWeb.Salir(Context)
-        Ir("~/Seguridad/wfRecuperar.aspx")
-    End Sub
-    Protected Sub Salir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+    Protected Sub Salir(sender As Object, e As EventArgs) Handles btnSalir.Click
         AccesoWeb.Salir(Context)
         Ir("~/Default.aspx")
     End Sub

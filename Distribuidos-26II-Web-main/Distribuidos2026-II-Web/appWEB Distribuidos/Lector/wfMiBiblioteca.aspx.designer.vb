@@ -1,0 +1,43 @@
+' Archivo de declaraciones de controles Web Forms.
+Partial Public Class MiBiblioteca
+    Protected WithEvents Cabecera As Global.System.Web.UI.WebControls.Content
+    Protected WithEvents Contenido As Global.System.Web.UI.WebControls.Content
+    Protected WithEvents lblMensaje As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents litEstado As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents lnkCatalogo As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents lnkCarrito As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents lnkReservas As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents lnkPrestamos As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents lnkCargos As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents lnkAvisos As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents pnlCatalogo As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents lblBuscar As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txtBuscar As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lblCategoria As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ddlCategoria As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents btnBuscar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnActualizar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents lvCatalogo As Global.System.Web.UI.WebControls.ListView
+    Protected WithEvents pgrCatalogo As Global.System.Web.UI.WebControls.DataPager
+    Protected WithEvents pnlCarrito As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents grvCarrito As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents btnSolicitar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnVaciar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents pnlReservas As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents pnlCancelar As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents litCancelar As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents btnConfirmarCancelar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnNoCancelar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents grvReservas As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents pnlPrestamos As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents grvPrestamos As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents pnlCargos As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents litCargos As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents lblPago As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ddlPago As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents btnFiltrarCargos As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents grvCargos As Global.System.Web.UI.WebControls.GridView
+    Protected WithEvents pnlAvisos As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents litSinAvisos As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents rptAvisos As Global.System.Web.UI.WebControls.Repeater
+End Class

@@ -75,6 +75,19 @@ Public Class PaginaAutenticada
             Response.Redirect(ResolveUrl("~/Default.aspx"), True)
         End If
     End Sub
+
+    Protected Sub Guardado(Optional texto As String = "Los cambios se guardaron correctamente.")
+        Session("Aviso." & Request.AppRelativeCurrentExecutionFilePath) = texto
+        Redirigir(Request.AppRelativeCurrentExecutionFilePath)
+    End Sub
+
+    Protected Sub MostrarAviso(control As Label)
+        Dim clave = "Aviso." & Request.AppRelativeCurrentExecutionFilePath
+        If Session(clave) IsNot Nothing Then
+            Exito(control, CStr(Session(clave)))
+            Session.Remove(clave)
+        End If
+    End Sub
 End Class
 
 Public Class PaginaMantenimiento
@@ -108,17 +121,33 @@ Public Class PaginaMantenimiento
         End Set
     End Property
 
-    Protected Sub Guardado()
-        Session("Aviso." & Request.AppRelativeCurrentExecutionFilePath) = "Los cambios se guardaron correctamente."
-        Redirigir(Request.AppRelativeCurrentExecutionFilePath)
-    End Sub
+End Class
 
-    Protected Sub MostrarAviso(control As Label)
-        Dim clave = "Aviso." & Request.AppRelativeCurrentExecutionFilePath
-        If Session(clave) IsNot Nothing Then
-            Exito(control, CStr(Session(clave)))
-            Session.Remove(clave)
-        End If
+Public Class PaginaAdministrador
+    Inherits PaginaMantenimiento
+    Protected Overrides Sub OnInit(e As EventArgs)
+        MyBase.OnInit(e)
+        Try
+            seguridadNegocio.ExigirAdministrador()
+        Catch ex As UnauthorizedAccessException
+            Throw New HttpException(403, "Esta página requiere una cuenta de administrador.")
+        Catch ex As Exception
+            Throw New HttpException(503, "No se pudo verificar el acceso.")
+        End Try
+    End Sub
+End Class
+
+Public Class PaginaLector
+    Inherits PaginaAutenticada
+    Protected Overrides Sub OnInit(e As EventArgs)
+        MyBase.OnInit(e)
+        Try
+            seguridadNegocio.ExigirLector()
+        Catch ex As UnauthorizedAccessException
+            Throw New HttpException(403, "Esta página requiere una cuenta de lector.")
+        Catch ex As Exception
+            Throw New HttpException(503, "No se pudo verificar el acceso.")
+        End Try
     End Sub
 End Class
 

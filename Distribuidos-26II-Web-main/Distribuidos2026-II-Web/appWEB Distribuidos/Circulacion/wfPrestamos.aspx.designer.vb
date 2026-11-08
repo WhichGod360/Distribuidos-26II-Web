@@ -1,0 +1,39 @@
+' Archivo de declaraciones de controles Web Forms.
+Partial Public Class PrestamosWeb
+    Protected WithEvents Cabecera As Global.System.Web.UI.WebControls.Content
+    Protected WithEvents Contenido As Global.System.Web.UI.WebControls.Content
+    Protected WithEvents lblMensaje As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblBuscar As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txtBuscar As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lblFiltro As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ddlEstado As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents btnBuscar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnNuevo As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents pnlNuevo As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents lblCriterio As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txtLector As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents btnBuscarLector As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents lblLector As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ddlLector As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents lblLibro As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ddlLibro As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents lblEjemplar As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents ddlEjemplar As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents litPlazo As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents btnGuardar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnCancelarNuevo As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents pnlDetalle As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents litDetalle As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents litDatos As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents lnkComprobante As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents lnkDevolucion As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents pnlDevolver As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents lblRetorno As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txtRetorno As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents btnCalcular As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents pnlConfirmar As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents litCalculo As Global.System.Web.UI.WebControls.Literal
+    Protected WithEvents btnDevolver As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents btnCerrar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents grvDatos As Global.System.Web.UI.WebControls.GridView
+End Class

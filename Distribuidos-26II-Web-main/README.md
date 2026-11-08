@@ -1,64 +1,56 @@
 # Biblioteca web Lecturae
 
-ASP.NET Web Forms, Visual Basic y .NET Framework 4.7.2. Interfaz con tablas HTML y controles ASP.NET, siguiendo el ejemplo de la profesora y el estilo del escritorio LECTURAE. CSS propio, sin Bootstrap, Tailwind ni frameworks JavaScript.
+Migración de la interfaz Windows Forms a ASP.NET Web Forms con Visual Basic y .NET Framework 4.7.2. Usa HTML, controles ASP.NET, CSS propio y JavaScript sin frameworks. Conserva la identidad visual de Lecturae y la estructura con tablas del curso.
 
-## Iniciar
+## Abrir y ejecutar
 
-Abrir `Distribuidos2026-II-Web/Distribuidos2026-II-Web.slnx` en Visual Studio con desarrollo ASP.NET/Web y targeting pack 4.7.2. Restaurar packages.config, compilar y ejecutar IIS Express.
+1. Abrir Distribuidos2026-II-Web/Distribuidos2026-II-Web.slnx en Visual Studio, con las herramientas de desarrollo ASP.NET y el targeting pack .NET Framework 4.7.2.
+2. Preparar la conexión SQL para el proceso de la aplicación. El iniciador Abrir-Lecturae.cmd puede usarse cuando ya existe el archivo privado de conexión indicado más abajo.
+3. Restaurar packages.config, compilar y ejecutar con IIS Express.
+4. Inicio de sesión: http://localhost:62578/Default.aspx. El lector entra en Mi biblioteca; administrador y bibliotecario, en el panel de inicio.
 
-**Default.aspx es el inicio de sesión**, configurado como página inicial. El proyecto usa HTTP local `http://localhost:62578/`, sin pedir certificado de desarrollo. En la verificación desde consola se usa `http://localhost:62578/Default.aspx`. Una sesión válida lleva a `wfInicio.aspx`, que utiliza pagWeb.Master.
+El inicio local de IIS Express está configurado por HTTP, sin puerto SSL. Si Visual Studio ya estaba abierto al actualizar esta configuración, recargar el proyecto o cerrar y abrir la solución antes de ejecutarlo de nuevo.
 
-Las DLL reales están incluidas en `Distribuidos2026-II-Web/Bibliotecas`; la compilación normal no depende de la carpeta del escritorio ni del SDK .NET 10. No reemplazarlas por las antiguas DLL net10.0.
+La compilación normal usa las DLL reales incluidas en Distribuidos2026-II-Web/Bibliotecas. No requiere compilar el escritorio ni usar .NET 10. El SDK .NET 10 solo corresponde a las herramientas opcionales para actualizar las DLL.
 
-## Funciones implementadas
+## Funciones
 
-| Página | Funciones |
-| --- | --- |
-| Default.aspx | Inicio de sesión por correo y contraseña con usuarioNegocio.IniciarSesion |
-| Seguridad/wfRecuperar.aspx | Pregunta de seguridad, verificación de respuesta y cambio de contraseña con token de cinco minutos |
-| Catalogo/wfLibros.aspx | Buscar, agregar, editar y desactivar libros; selección de varios autores/categorías; ejemplares iniciales y enlace a gestión de copias |
-| Catalogo/wfAutores.aspx | Buscar, agregar, editar y eliminar autores respetando restricciones de asociación |
-| Catalogo/wfCategorias.aspx | Buscar, agregar, editar, desactivar y reactivar categorías |
-| Catalogo/wfEjemplares.aspx | Seleccionar libro, listar copias, agregar y activar/desactivar ejemplares |
-| Administracion/wfPenalizaciones.aspx | Buscar, agregar, editar, desactivar y reactivar tipos de penalización, importes y tramos |
+| Área | Página | Comportamiento |
+| --- | --- | --- |
+| Acceso | Default.aspx | Inicio y cierre de sesión; destino según rol |
+| Registro | Seguridad/wfRegistro.aspx | Nueva cuenta de lector y validación de contraseña |
+| Recuperación | Seguridad/wfRecuperar.aspx | Pregunta, respuesta y cambio de contraseña autorizado |
+| Inicio | wfInicio.aspx | Estadísticas del backend, filtros, préstamos por mes y categoría, devoluciones y accesos por rol |
+| Lectores | Circulacion/wfLectores.aspx | Búsqueda de estudiantes activos e historial |
+| Préstamos | Circulacion/wfPrestamos.aspx | Listado, filtros, registro presencial, cálculo y confirmación de devolución |
+| Solicitudes | Circulacion/wfSolicitudes.aspx | Aprobación, rechazo, selección de ejemplares por título y entrega |
+| Comprobantes | Circulacion/wfComprobante.aspx | Consulta en pantalla de entregas y devoluciones |
+| Usuarios | Administracion/wfUsuarios.aspx | Alta, edición, filtros por rol/estado y activación/desactivación |
+| Bitácora | Administracion/wfBitacora.aspx | Filtros, detalle codificado y actualización automática opcional |
+| Cargos | Administracion/wfDetallePenalizaciones.aspx | Alta y edición de motivo/pago, conservando importe y relaciones del cargo |
+| Mi biblioteca | Lector/wfMiBiblioteca.aspx | Catálogo en tarjetas, carrito, reservas, préstamos propios, penalizaciones y avisos |
+| Catálogo | Catalogo/wfLibros.aspx | Libros, relaciones con autores/categorías y ejemplares iniciales |
+| Mantenimientos | Catalogo/wfAutores.aspx, wfCategorias.aspx, wfEjemplares.aspx | Autores, categorías y copias físicas |
+| Penalizaciones | Administracion/wfPenalizaciones.aspx | Tipos, importes y tramos |
 
-Las bajas conservan las reglas del escritorio: categorías, penalizaciones, libros y ejemplares se desactivan mediante los métodos existentes. Autores no se pueden eliminar si están asociados a libros. En ejemplares, la edición es cambio de estado, sin cambiar de libro ni inventar una eliminación física. Se confirman las bajas en servidor antes de ejecutarlas.
+Los pagos se regularizan en ventanilla y la interfaz registra su estado, como el escritorio. Los comprobantes se muestran en pantalla dentro del diseño general de la aplicación, sin controles de impresión ni descarga.
 
-El resto de módulos permanece pendiente: lectores, préstamos, solicitudes, gestión de usuarios, bitácora y estadísticas del inicio. No se implementó registro de nuevas cuentas, pagos ni detalles de penalización de préstamos. El menú solo habilita los cinco mantenimientos solicitados; los lectores no tienen acceso a ellos.
+## Backend, sesión y permisos
 
-## Organización y estilo del curso
+Las páginas llaman a capaNegocio; no incluyen SQL. Se reutilizan las DLL .NET Standard 2.0 adaptadas a la web, con un almacén de identidad por HttpContext.Session y ticket protegido de Forms Authentication. El código fuente del escritorio sirve de referencia y no se modificó durante esta migración.
 
-La maestra conserva cabecera, menú y pie en tablas HTML, asp:ContentPlaceHolder y eventos .Master.vb para navegar. Cada mantenimiento tiene .aspx, .aspx.vb y .designer.vb con controles Button, TextBox, DropDownList, CheckBox, CheckBoxList y GridView. Las páginas llaman a capaNegocio; no contienen SQL. Comun/Paginas.vb reúne validación de acceso, mensajes, formato y protección de formularios sin duplicar las reglas de negocio.
+Cada página verifica su acceso en servidor: usuarios y bitácora requieren administrador; circulación, cargos y mantenimientos requieren personal; Mi biblioteca requiere lector. Las consultas personales obtienen el lector desde la sesión. El carrito vive en la sesión del visitante. Los formularios mantienen ViewState firmado y vinculado a la sesión.
 
-La identidad se mantiene por visitante en HttpContext.Session y se restaura desde un ticket protegido de Forms Authentication. El login abandona la sesión anónima; la cookie no es persistente y dura 30 minutos. Cerrar sesión elimina ticket y estado. La maestra muestra nombres codificados, los listados codifican sus campos y los formularios usan ViewState firmado vinculado a la sesión. Los mantenimientos verifican personal activo en servidor mediante seguridadNegocio. Hay límite de intentos en login y recuperación.
-
-Cambiar contraseña desde el menú cierra la sesión y abre el flujo de verificación por pregunta de seguridad, igual que la recuperación del escritorio. La autorización permanece en Session y no se coloca en URL ni campos HTML.
+La devolución conserva en servidor el cálculo revisado; cambiar la fecha exige calcular otra vez. La entrega admite un selector de ejemplar por título. La edición de cargos conserva los identificadores y el importe del registro original. La capa de negocio y sus transacciones siguen resolviendo disponibilidad, concurrencia y reglas de circulación.
 
 ## Conexión privada
 
-El backend lee BIBLIOTECA_CONNECTION_STRING, BIBLIOTECA_CONNECTION_FILE o `%LOCALAPPDATA%\Biblioteca\connection-string.txt`. En este equipo existe la configuración privada fuera del repositorio. Para otro equipo debe configurarse por separado. No hay credenciales en Web.config ni en las páginas. Los cambios reales realizados por un usuario autenticado afectarán la misma biblioteca que el escritorio.
+El backend lee BIBLIOTECA_CONNECTION_STRING, BIBLIOTECA_CONNECTION_FILE o el archivo privado de conexión de Biblioteca en LOCALAPPDATA. La configuración privada se prepara por separado en cada equipo. No se guardan credenciales en las páginas ni en Web.config.
 
-## Verificación y límites
+La aplicación de entrega usa las DLL reales. Los cambios de un usuario autenticado se realizarán en la base configurada para esa aplicación.
 
-- Compilación Debug/Release y precompilación ASP.NET finales satisfactorias.
-- Login y recuperación cargan por HTTP. Los cinco mantenimientos rechazan acceso anónimo.
-- 35 comprobaciones HTTP reproducibles en copia aislada con backend EN MEMORIA: altas, ediciones, bajas confirmadas, libros con relaciones, ejemplares, permisos, logout, recuperación, cambio de clave, ViewState y límite de intentos. Véase tests/FlujosWeb/README.md.
-- Nueve comprobaciones adicionales del adaptador real de sesión.
-- Se abrió y cerró la conexión SQL privada real, sin ejecutar consultas. No se ejecutaron CRUD ni cambios de contraseña contra Somee durante la verificación: requieren una cuenta y datos de prueba autorizados.
-- La prueba en memoria valida el flujo web y sus llamadas; no sustituye las pruebas de SQL ni concurrencia transaccional reales. Las reglas SQL siguen siendo las del backend original.
-- Si los nombres agregados de autores/categorías de un libro admiten interpretaciones ambiguas, la edición se detiene para evitar perder relaciones.
+Si se usa una conexión temporal mediante variables del proceso, debe proporcionarse de nuevo al reiniciar IIS Express o Visual Studio. El proyecto no contiene credenciales SQL guardadas.
 
-El disco C: se quedó casi sin espacio durante las pruebas; los archivos temporales de verificación se prepararon en D:. El proyecto de entrega permanece en su ruta original de Downloads.
+## Actualizar el backend
 
-## Actualizar backend
-
-Las cuatro capas originales se compilan para .NET Standard 2.0 y el escritorio mantiene su interfaz .NET 10. Para regenerar las DLL locales tras cambiar esas capas, ejecutar explícitamente scripts/Build-Backend.ps1 -BackendRoot 'RUTA\Distribuidos-2026II' -Configuration Release. No se necesita para compilar la entrega actual.
-
-## Abrir desde D: en este equipo
-
-Ejecutar `D:\Distribuidos-26II-Web-main\Abrir-Lecturae.cmd`. Abre una nueva instancia de Visual Studio con la solución correcta y dirige los temporales a `.local` en D:, porque C: está casi lleno. No cambia las variables globales de Windows. El iniciador también actualiza compilation/tempDirectory en Web.config para esta ubicación local; si se traslada a otra carpeta, volver a ejecutar el iniciador para actualizarla.
-
-En el Explorador de soluciones, expandir appWEB Distribuidos y las carpetas Catalogo, Administracion y Seguridad para ver los formularios. Default.aspx es el login, wfInicio.aspx el panel. El ejemplo de la profesora tiene otro nombre de solución: solWEBSistemasDistribuidos_B.
-
-La instancia antigua del puerto 51843 corresponde a la copia previa. Para la entrega de D: usar exclusivamente http://localhost:62578/Default.aspx. Se verificó la apertura y cierre de la conexión mediante la DLL real dentro de IIS Express, sin consultas SQL.
-
+Las DLL actuales ya incluyen los contratos usados por estas páginas. Para regenerarlas en otro momento, usar scripts/Build-Backend.ps1 con un backend compatible y adaptado a .NET Standard 2.0. La copia fuente del escritorio recibida en esta sesión tiene destino .NET 10: sus DLL compiladas directamente no sustituyen a las DLL compatibles de la web.
