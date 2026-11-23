@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "l459fc0wuVk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\backend\\capaDAO\\capaDAO.vbproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\danix\\.nuget\\packages\\system.data.sqlclient\\4.9.1\\system.data.sqlclient.4.9.1.nupkg.sha512"
+  ],
+  "logs": []
+}

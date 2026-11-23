@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>capaNegocio</RootNamespace>
+    <TargetFramework>net472</TargetFramework>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\capaDatos\capaDatos.vbproj" />
+    <ProjectReference Include="..\capaDAO\capaDAO.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Import Include="capaDAO" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="../../../Distribuidos-26II-escritorio/Distribuidos-2026II/capaNegocio/*.vb" Link="%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

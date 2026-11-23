@@ -1,0 +1,1 @@
+workstation id=somee_distribuidos-II.mssql.somee.com;packet size=4096;user id=lope_SQLLogin_1;pwd=woxcl7vth3;data source=somee_distribuidos-II.mssql.somee.com;persist security info=False;initial catalog=somee_distribuidos-II;TrustServerCertificate=True

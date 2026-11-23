@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="3" virtualPath="/Catalogo/wfEjemplares.aspx" hash="fffffff58834ac70" filehash="e546f787fc1e93f8" flags="110000" assembly="App_Web_hsgo5nm1" type="ASP.catalogo_wfejemplares_aspx">
-    <filedeps>
-        <filedep name="/Catalogo/wfEjemplares.aspx" />
-        <filedep name="/pagWeb.Master" />
-    </filedeps>
-</preserve>

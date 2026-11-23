@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="3" virtualPath="/Seguridad/wfRecuperar.aspx" hash="fffffff58834ac70" filehash="3e8fe7d16f75" flags="110000" assembly="App_Web_e5ziusb1" type="ASP.seguridad_wfrecuperar_aspx">
-    <filedeps>
-        <filedep name="/Seguridad/wfRecuperar.aspx" />
-    </filedeps>
-</preserve>

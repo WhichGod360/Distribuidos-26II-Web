@@ -1,0 +1,66 @@
+{
+  "version": 4,
+  "targets": {
+    "net472": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net472": []
+  },
+  "packageFolders": {
+    "C:\\Users\\danix\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\backend\\capaDatos\\capaDatos.vbproj",
+      "projectName": "capaDatos",
+      "projectPath": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\backend\\capaDatos\\capaDatos.vbproj",
+      "packagesPath": "C:\\Users\\danix\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\backend\\capaDatos\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\danix\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net472"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net472": {
+          "framework": "net472",
+          "targetAlias": "net472",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.400"
+    },
+    "frameworks": {
+      "net472": {
+        "framework": "net472",
+        "targetAlias": "net472",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

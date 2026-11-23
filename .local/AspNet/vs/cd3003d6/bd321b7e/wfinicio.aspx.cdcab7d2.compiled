@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="3" virtualPath="/wfInicio.aspx" hash="fffffff58834ac70" filehash="703e0c32a415d43f" flags="110000" assembly="App_Web_0llce1cp" type="ASP.wfinicio_aspx">
-    <filedeps>
-        <filedep name="/pagWeb.Master" />
-        <filedep name="/wfInicio.aspx" />
-    </filedeps>
-</preserve>

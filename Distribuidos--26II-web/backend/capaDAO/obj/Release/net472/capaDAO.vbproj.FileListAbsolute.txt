@@ -1,0 +1,30 @@
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\bin\Release\net472\capaDAO.dll
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\bin\Release\net472\capaDAO.pdb
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\bin\Release\net472\System.Data.SqlClient.dll
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\bin\Release\net472\capaConexion.dll
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\bin\Release\net472\capaDatos.dll
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\bin\Release\net472\capaConexion.pdb
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\bin\Release\net472\capaDatos.pdb
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\obj\Release\net472\capaDAO.vbproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\obj\Release\net472\capaDAO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\obj\Release\net472\capaDAO.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\obj\Release\net472\capaDAO.AssemblyInfo.vb
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\obj\Release\net472\capaDAO.vbproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\obj\Release\net472\capaDAO.vbproj.Up2Date
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\obj\Release\net472\capaDAO.dll
+C:\Users\Admin\Desktop\sadasd\backend\capaDAO\obj\Release\net472\capaDAO.pdb
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\bin\Release\net472\capaDAO.dll
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\bin\Release\net472\capaDAO.pdb
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\bin\Release\net472\System.Data.SqlClient.dll
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\bin\Release\net472\capaConexion.dll
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\bin\Release\net472\capaDatos.dll
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\bin\Release\net472\capaConexion.pdb
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\bin\Release\net472\capaDatos.pdb
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\obj\Release\net472\capaDAO.vbproj.AssemblyReference.cache
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\obj\Release\net472\capaDAO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\obj\Release\net472\capaDAO.AssemblyInfoInputs.cache
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\obj\Release\net472\capaDAO.AssemblyInfo.vb
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\obj\Release\net472\capaDAO.vbproj.CoreCompileInputs.cache
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\obj\Release\net472\capaDAO.vbproj.Up2Date
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\obj\Release\net472\capaDAO.dll
+C:\Users\danix\OneDrive\Desktop\Temrinando Distribuidos\Distribuidos--26II-web\backend\capaDAO\obj\Release\net472\capaDAO.pdb
