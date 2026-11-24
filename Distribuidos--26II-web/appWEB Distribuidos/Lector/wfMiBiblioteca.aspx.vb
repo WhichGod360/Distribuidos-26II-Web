@@ -1,9 +1,10 @@
-﻿Imports appWEB_Distribuidos.Librerias
-Imports System.Linq
+﻿Imports System.Linq
 
 Public Class MiBiblioteca
     Inherits PaginaLector
+
     Private biblioteca As BibliotecaLectorSoap
+    Private seleccion As List(Of Libro)
     Private demoPago As Boolean
     Private pagoYape As Boolean
 
@@ -33,8 +34,10 @@ Public Class MiBiblioteca
     End Sub
     Private Sub CargarEstado()
         If biblioteca IsNot Nothing Then Return
-        biblioteca = Servicio.ConsultarBibliotecaLector(CarritoIds.ToArray())
+        biblioteca = WS.ConsultarBibliotecaLector(CarritoIds.ToArray())
         Dim estado = biblioteca.Circulacion
+        seleccion = CarritoIds.Select(Function(id) If(biblioteca.Catalogo.FirstOrDefault(Function(l) l.IdLibro = id),
+            New Libro With {.IdLibro = id, .TituloLibro = "Título ya no disponible. Quítalo del carrito."})).ToList()
         litEstado.Text = estado.LibrosPendientes & " libro(s) pendientes · Cupo de préstamos disponible: " & estado.CupoDisponible & " · Carrito: " & CarritoIds.Count &
             If(estado.TieneSolicitudVigente, " · Ya tienes una reserva vigente. Podrás solicitar otra cuando se cierre.", "") & If(estado.TienePagosPorRegularizar, " · Regulariza tus cargos antes de solicitar nuevos libros.", "")
     End Sub
@@ -50,9 +53,6 @@ Public Class MiBiblioteca
             End If
         Next
     End Sub
-    Private Function CarritoActual() As List(Of Libro)
-        Return CarritoIds.Select(Function(id) If(biblioteca.Catalogo.FirstOrDefault(Function(l) l.IdLibro = id), New Libro With {.IdLibro = id, .TituloLibro = "Título ya no disponible. Quítalo del carrito."})).ToList()
-    End Function
     Private Sub Mostrar()
         CargarEstado()
         Select Case Vista
@@ -63,27 +63,24 @@ Public Class MiBiblioteca
                 lvCatalogo.DataBind()
                 pgrCatalogo.Visible = librosFiltrados.Count > pgrCatalogo.PageSize
             Case "carrito"
-                Dim carrito = CarritoActual()
-                grvCarrito.DataSource = carrito
+                grvCarrito.DataSource = seleccion
                 grvCarrito.DataBind()
                 btnSolicitar.Enabled = biblioteca.PuedeSolicitar
-                btnVaciar.Enabled = carrito.Count > 0
+                btnVaciar.Enabled = seleccion.Count > 0
             Case "reservas"
                 grvReservas.DataSource = biblioteca.Reservas
                 grvReservas.DataBind()
             Case "prestamos"
-                grvPrestamos.DataSource = biblioteca.Prestamos.Select(Function(p) New With {p.IdPrestamo, p.TituloLibro, p.Ejemplares, p.FechaInicio, p.FechaFin, p.FechaRetorno, .Estado = p.EstadoEnVista}).ToList()
+                grvPrestamos.DataSource = biblioteca.Prestamos.Select(Function(p) New With {p.IdPrestamo, p.TituloLibro, p.Ejemplares, p.FechaInicio, p.FechaFin, p.FechaRetorno, .Estado = p.EstadoTexto}).ToList()
                 grvPrestamos.DataBind()
             Case "cargos"
-                demoPago = Servicio.PagoDemoDisponible()
-                pagoYape = Servicio.PagoYapeDisponible() AndAlso ImagenYape.Configurada(Context)
-                Dim cargos = biblioteca.Cargos
-                litCargos.Text = "Total: " & FormulariosWeb.Dinero(cargos.Total) & " · Pendiente: " & FormulariosWeb.Dinero(cargos.Pendiente) & " · Por revisar: " & FormulariosWeb.Dinero(cargos.PorRevisar) & " · Pagado: " & FormulariosWeb.Dinero(cargos.Pagado)
-                grvCargos.DataSource = cargos.Detalles.Where(Function(d) ddlPago.SelectedValue = "" OrElse d.EstadoPago = ddlPago.SelectedValue).ToList()
+                demoPago = WS.PagoDemoDisponible()
+                pagoYape = WS.PagoYapeDisponible() AndAlso ImagenYape.Configurada(Context)
+                litCargos.Text = "Total: " & FormulariosWeb.Dinero(biblioteca.Cargos.Total) & " · Pendiente: " & FormulariosWeb.Dinero(biblioteca.Cargos.Pendiente) & " · Por revisar: " & FormulariosWeb.Dinero(biblioteca.Cargos.PorRevisar) & " · Pagado: " & FormulariosWeb.Dinero(biblioteca.Cargos.Pagado)
+                grvCargos.DataSource = biblioteca.Cargos.Detalles.Where(Function(d) ddlPago.SelectedValue = "" OrElse d.EstadoPago = ddlPago.SelectedValue).ToList()
                 grvCargos.DataBind()
             Case "avisos"
-                Dim avisos = Servicio.ListarMisAvisos().ToList()
-                If Servicio.PagoYapeDisponible() Then avisos.AddRange(Servicio.ListarMisAvisosYape())
+                Dim avisos = WS.ListarMisAvisos()
                 rptAvisos.DataSource = avisos
                 rptAvisos.DataBind()
                 litSinAvisos.Text = If(avisos.Count = 0, "No tienes avisos nuevos.", "")
@@ -132,7 +129,7 @@ Public Class MiBiblioteca
         Ejecutar(lblMensaje, Sub()
             CargarEstado()
             If Not biblioteca.PuedeSolicitar Then Throw New InvalidOperationException("Revisa disponibilidad, cupo, reservas vigentes y pagos antes de solicitar.")
-            Dim id = Servicio.SolicitarLibros(CarritoIds.ToArray())
+            Dim id = WS.SolicitarLibros(CarritoIds.ToArray())
             CarritoIds = New List(Of Integer)()
             Volver("reservas", "Solicitud N.º " & id & " registrada. Espera su aprobación antes del recojo.")
         End Sub)
@@ -158,7 +155,7 @@ Public Class MiBiblioteca
             CargarEstado()
             Dim id = Entero(CStr(ViewState("Cancelar")), 1)
             If Not pnlCancelar.Visible OrElse Not PuedeCancelarReserva(biblioteca.Reservas.FirstOrDefault(Function(s) s.IdSolicitud = id)) Then Throw New InvalidOperationException("La reserva cambió. Actualiza tus reservas.")
-            Servicio.CancelarSolicitud(id)
+            WS.CancelarSolicitud(id)
             Volver("reservas", "Reserva cancelada.")
         End Sub)
     End Sub

@@ -1,5 +1,4 @@
-﻿Imports appWEB_Distribuidos.Librerias
-Imports System.Globalization
+﻿Imports System.Globalization
 
 Public Class DatosUsuario
     Inherits System.Web.UI.UserControl

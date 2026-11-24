@@ -1,15 +1,16 @@
 ﻿Imports System.Globalization
-Imports System.ServiceModel
 Imports System.Web.Security
-Imports appWEB_Distribuidos.Librerias
 
 ' Estado de formulario firmado y ligado a la sesión; nunca identifica al operador desde el navegador.
 Public Class PaginaBase
     Inherits System.Web.UI.Page
 
-    Protected ReadOnly Property Servicio As swBibliotecaSoapClient
+    Protected Property ErrorAlConsultarSesion As Exception
+
+    Protected ReadOnly Property WS As Libreria.swBibliotecaSoapClient
         Get
-            Return ClienteSoap.Actual()
+            If ErrorAlConsultarSesion IsNot Nothing Then Throw New InvalidOperationException("No se pudo verificar la sesión con el servicio de biblioteca.", ErrorAlConsultarSesion)
+            Return ServicioBiblioteca.Cliente
         End Get
     End Property
 
@@ -22,16 +23,9 @@ Public Class PaginaBase
     End Sub
 
     Protected Sub MensajeError(control As Label, ex As Exception)
-        Dim fallo = TryCast(ex, FaultException)
+        Dim fallo = TryCast(ex, System.ServiceModel.FaultException)
         If fallo IsNot Nothing AndAlso (fallo.Code.IsSenderFault OrElse fallo.Code.Name = "Client") Then
-            Dim mensaje = fallo.Reason.ToString().Split({ControlChars.Cr, ControlChars.Lf}, StringSplitOptions.RemoveEmptyEntries).FirstOrDefault()
-            Const prefijo As String = "System.Web.Services.Protocols.SoapException: "
-            If mensaje IsNot Nothing AndAlso mensaje.StartsWith(prefijo, StringComparison.Ordinal) Then mensaje = mensaje.Substring(prefijo.Length)
-            control.Text = Server.HtmlEncode(If(mensaje, "No se pudo completar la operación."))
-        ElseIf TypeOf ex Is EndpointNotFoundException OrElse TypeOf ex Is TimeoutException Then
-            control.Text = "No se pudo conectar al servicio de biblioteca. Comprueba que WebServices_Biblioteca esté en ejecución."
-        ElseIf TypeOf ex Is Security.SecurityNegotiationException OrElse TypeOf ex Is Security.MessageSecurityException Then
-            control.Text = "No se pudo validar el certificado del servicio de biblioteca."
+            control.Text = Server.HtmlEncode(fallo.Reason.ToString())
         ElseIf TypeOf ex Is UnauthorizedAccessException OrElse TypeOf ex Is ArgumentException OrElse TypeOf ex Is InvalidOperationException Then
             control.Text = Server.HtmlEncode(ex.Message)
         Else
@@ -42,6 +36,10 @@ Public Class PaginaBase
     End Sub
 
     Protected Sub Ejecutar(control As Label, accion As Action)
+        If ErrorAlConsultarSesion IsNot Nothing Then
+            MensajeError(control, ErrorAlConsultarSesion)
+            Return
+        End If
         control.Visible = False
         Try
             accion()
@@ -93,11 +91,11 @@ Public Class PaginaAutenticada
         End If
         Try
             AccesoWeb.ActualizarIdentidad(Context)
-        Catch ex As FaultException When ex.Code.IsSenderFault OrElse ex.Code.Name = "Client"
+        Catch ex As UnauthorizedAccessException
             AccesoWeb.Descartar(Context)
             Response.Redirect(ResolveUrl("~/Default.aspx"), True)
-        Catch ex As Exception When TypeOf ex Is CommunicationException OrElse TypeOf ex Is TimeoutException
-            Throw New HttpException(503, "No se pudo conectar al servicio de biblioteca.")
+        Catch ex As Exception When TypeOf ex Is System.ServiceModel.CommunicationException OrElse TypeOf ex Is TimeoutException
+            ErrorAlConsultarSesion = ex
         End Try
     End Sub
 

@@ -2,11 +2,10 @@
 Public Class RevisionYapeWeb
     Inherits PaginaMantenimiento
 
-
     Protected Sub Cargar(sender As Object, e As EventArgs) Handles Me.Load
         If IsPostBack Then Return
         Ejecutar(lblMensaje, Sub()
-            If Not Servicio.PagoYapeDisponible() Then Throw New InvalidOperationException("Aplica la migración de Yape en la base de Lecturae para habilitar esta bandeja.")
+            If Not WS.PagoYapeDisponible() Then Throw New InvalidOperationException("Aplica la migración de Yape en la base de Lecturae para habilitar esta bandeja.")
             Listar()
             pnlBandeja.Visible = True
             If Request.QueryString("id") IsNot Nothing Then MostrarReporte(Entero(Request.QueryString("id"), 1))
@@ -15,12 +14,12 @@ Public Class RevisionYapeWeb
     End Sub
 
     Private Sub Listar()
-        grvReportes.DataSource = Servicio.ListarReportesYape(ddlEstado.SelectedValue)
+        grvReportes.DataSource = WS.ListarReportesYape(ddlEstado.SelectedValue)
         grvReportes.DataBind()
     End Sub
 
     Private Sub MostrarReporte(id As Integer)
-        Dim reporte = Servicio.ObtenerReporteYape(id).AsEnumerable().FirstOrDefault()
+        Dim reporte = WS.ObtenerReporteYape(id).AsEnumerable().FirstOrDefault()
         If reporte Is Nothing Then Throw New InvalidOperationException("El reporte no está disponible.")
         RegistroId = id
         litTitulo.Text = "Reporte N.º " & id & " · Cargo N.º " & reporte.Field(Of Integer)("IdDetalle") &
@@ -63,7 +62,7 @@ Public Class RevisionYapeWeb
             If Not pnlDecision.Visible OrElse RegistroId <= 0 Then Throw New InvalidOperationException("Abre un reporte en revisión.")
             Dim confirmar = sender Is btnConfirmar
             If confirmar AndAlso Not chkVerificado.Checked Then Throw New ArgumentException("Marca la verificación del ingreso en la cuenta receptora.")
-            Servicio.RevisarReporteYape(RegistroId, confirmar, chkVerificado.Checked, txtMotivo.Text)
+            WS.RevisarReporteYape(RegistroId, confirmar, chkVerificado.Checked, txtMotivo.Text)
             Guardado(If(confirmar, "Pago confirmado. El cargo quedó pagado.", "Reporte denegado. El cargo volvió a pendiente."))
         End Sub)
     End Sub

@@ -4,7 +4,8 @@
     Protected Sub btnPregunta_Click(sender As Object, e As EventArgs) Handles btnPregunta.Click
         Ejecutar(lblMensaje, Sub()
             CancelarToken()
-            Dim pregunta = Servicio.ObtenerPregunta(txtCorreo.Text)
+            AccesoWeb.Limitar(Context, txtCorreo.Text, "pregunta")
+            Dim pregunta = WS.ObtenerPregunta(txtCorreo.Text)
             Session("Recuperacion.Correo") = txtCorreo.Text.Trim()
             litPregunta.Text = pregunta
             pnlCorreo.Visible = False
@@ -25,7 +26,8 @@
             Dim intentos = If(Session("Recuperacion.Intentos") Is Nothing, 0, CInt(Session("Recuperacion.Intentos")))
             If intentos >= 5 Then Throw New InvalidOperationException("Alcanzaste el límite de intentos. Vuelve a intentarlo en unos minutos.")
             Session("Recuperacion.Intentos") = intentos + 1
-            Dim token = Servicio.ValidarRespuesta(CStr(Session("Recuperacion.Correo")), txtRespuesta.Text)
+            AccesoWeb.Limitar(Context, CStr(Session("Recuperacion.Correo")), "respuesta")
+            Dim token = WS.ValidarRespuesta(CStr(Session("Recuperacion.Correo")), txtRespuesta.Text)
             Session("Recuperacion.Token") = token
             Session.Remove("Recuperacion.Intentos")
             Session.Remove("Recuperacion.IntentosVence")
@@ -38,8 +40,8 @@
     Protected Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Ejecutar(lblMensaje, Sub()
             If Session("Recuperacion.Token") Is Nothing OrElse Session("Recuperacion.Correo") Is Nothing Then Throw New UnauthorizedAccessException("Verifica primero tu respuesta de seguridad.")
-            Servicio.CambiarContrasena(CStr(Session("Recuperacion.Correo")), txtNueva.Text, txtConfirmar.Text, CStr(Session("Recuperacion.Token")))
-            CancelarToken()
+            WS.CambiarContrasena(CStr(Session("Recuperacion.Correo")), txtNueva.Text, txtConfirmar.Text, CStr(Session("Recuperacion.Token")))
+            LimpiarRecuperacion()
             pnlNueva.Visible = False
             Exito(lblMensaje, "Contraseña actualizada. Ya puedes iniciar sesión con tu nueva clave.")
         End Sub)
@@ -48,12 +50,18 @@
     End Sub
 
     Protected Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        CancelarToken()
-        Redirigir("~/Default.aspx")
+        Ejecutar(lblMensaje, Sub()
+            CancelarToken()
+            Redirigir("~/Default.aspx")
+        End Sub)
     End Sub
 
     Private Sub CancelarToken()
-        If Session("Recuperacion.Token") IsNot Nothing Then Servicio.CancelarRecuperacion(CStr(Session("Recuperacion.Token")))
+        If Session("Recuperacion.Token") IsNot Nothing Then WS.CancelarRecuperacion(CStr(Session("Recuperacion.Token")))
+        LimpiarRecuperacion()
+    End Sub
+
+    Private Sub LimpiarRecuperacion()
         Session.Remove("Recuperacion.Token")
         Session.Remove("Recuperacion.Correo")
     End Sub

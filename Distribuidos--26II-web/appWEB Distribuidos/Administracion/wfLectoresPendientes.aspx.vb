@@ -10,7 +10,7 @@ Public Class LectoresPendientesWeb
     End Sub
 
     Private Sub Listar()
-        grvDatos.DataSource = Servicio.ListarLectoresPendientes(txtBuscar.Text)
+        grvDatos.DataSource = WS.ListarLectoresPendientes(txtBuscar.Text)
         grvDatos.DataBind()
     End Sub
 
@@ -26,7 +26,7 @@ Public Class LectoresPendientesWeb
                                  Dim indice = Entero(CStr(e.CommandArgument), 0, grvDatos.Rows.Count - 1)
                                  Dim idLector = CInt(grvDatos.DataKeys(indice).Value)
                                  If e.CommandName = "Aprobar" Then
-                                     Servicio.AprobarLector(idLector)
+                                     WS.AprobarLector(idLector)
                                      Guardado("El lector fue aprobado y ya puede iniciar sesión.")
                                  Else
                                      EliminarId = idLector
@@ -39,7 +39,7 @@ Public Class LectoresPendientesWeb
     Protected Sub ConfirmarRechazo(sender As Object, e As EventArgs) Handles btnConfirmar.Click
         Ejecutar(lblMensaje, Sub()
                                  If Not pnlConfirmar.Visible OrElse EliminarId <= 0 Then Throw New InvalidOperationException("La solicitud cambió. Selecciónala nuevamente.")
-                                 Servicio.RechazarLector(EliminarId)
+                                 WS.RechazarLector(EliminarId)
                                  EliminarId = 0
                                  Guardado("La solicitud fue rechazada y la cuenta pendiente se eliminó.")
                              End Sub)

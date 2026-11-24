@@ -14,7 +14,7 @@ Public Class BitacoraWeb
             End If
             usuario = id
         End If
-        Dim datos = Servicio.ListarBitacora(FechaOpcional(txtDesde.Text), FechaOpcional(txtHasta.Text), usuario, txtObjeto.Text, ddlAccion.SelectedValue, Nothing)
+        Dim datos = WS.ListarBitacora(FechaOpcional(txtDesde.Text), FechaOpcional(txtHasta.Text), usuario, txtObjeto.Text, ddlAccion.SelectedValue, Nothing)
         grvDatos.DataSource = datos
         grvDatos.DataBind()
         litResumen.Text = datos.Count & " movimiento(s) · Actualizado " & Date.Now.ToString("HH:mm:ss")
@@ -38,7 +38,7 @@ Public Class BitacoraWeb
     Protected Sub Seleccionar(sender As Object, e As EventArgs) Handles grvDatos.SelectedIndexChanged
         pnlDetalle.Visible = False
         Ejecutar(lblMensaje, Sub()
-            Dim registro = Servicio.ObtenerMovimientoBitacora(CInt(grvDatos.SelectedDataKey.Value))
+            Dim registro = WS.ObtenerMovimientoBitacora(CInt(grvDatos.SelectedDataKey.Value))
             If registro Is Nothing Then Throw New InvalidOperationException("El movimiento ya no está disponible.")
             litCadena.Text = registro.CadenaMan
             pnlDetalle.Visible = True

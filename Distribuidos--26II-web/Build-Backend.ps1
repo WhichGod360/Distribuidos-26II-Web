@@ -3,7 +3,7 @@ $backend = Join-Path $PSScriptRoot 'backend'
 $bibliotecas = Join-Path $PSScriptRoot 'Bibliotecas'
 $capas = 'capaConexion', 'capaDatos', 'capaDAO', 'capaNegocio'
 
-dotnet build (Join-Path $backend 'capaNegocio/capaNegocio.vbproj') -c Release -f net472 --nologo
+dotnet build (Join-Path $backend 'capaNegocio/capaNegocio.vbproj') -c Release -f net472 -m:1 -nr:false -p:UseSharedCompilation=false --nologo
 if ($LASTEXITCODE -ne 0) { throw 'No se pudieron compilar las capas para la web.' }
 
 foreach ($capa in $capas) {

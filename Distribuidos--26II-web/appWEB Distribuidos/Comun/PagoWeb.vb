@@ -1,6 +1,5 @@
 ﻿Imports System.Drawing.Imaging
 Imports System.IO
-Imports System.ServiceModel
 Imports System.Web.SessionState
 Imports QRCoder
 
@@ -22,10 +21,11 @@ Public NotInheritable Class ImagenYape
     End Property
 
     Public Sub ProcessRequest(contexto As HttpContext) Implements IHttpHandler.ProcessRequest
+        AccesoWeb.ActualizarIdentidad(contexto)
         If Not AccesoWeb.EsLector(AccesoWeb.UsuarioActual(contexto)?.NombreRol) Then
             Throw New HttpException(403, "El QR está disponible para lectores.")
         End If
-        If Not Configurada(contexto) OrElse Not ClienteSoap.Actual().PagoYapeDisponible() Then
+        If Not Configurada(contexto) OrElse Not ServicioBiblioteca.Cliente.PagoYapeDisponible() Then
             Throw New HttpException(404, "QR de Yape no disponible.")
         End If
 
@@ -91,7 +91,7 @@ Public NotInheritable Class PagoDemoWeb
                 Return
             End If
             Dim token = If(metodo = "POST", contexto.Request.Form("t"), contexto.Request.QueryString("t"))
-            Dim resultado = ClienteSoap.Actual().ProcesarPagoDemo(token, metodo = "POST")
+            Dim resultado = ServicioBiblioteca.Cliente.ProcesarPagoDemo(token, metodo = "POST")
             If resultado Is Nothing Then
                 respuesta.StatusCode = 404
                 Mostrar(contexto, "Demostración no disponible.")
@@ -111,7 +111,8 @@ Public NotInheritable Class PagoDemoWeb
 
             Mostrar(contexto, If(resultado.PagoNuevo, $"Pago simulado confirmado. El cargo N.º {resultado.IdCargo} figura como pagado.",
                 $"El pago simulado del cargo N.º {resultado.IdCargo} ya estaba confirmado."))
-        Catch ex As FaultException When ex.Code.IsSenderFault OrElse ex.Code.Name = "Client"
+        Catch ex As Exception When TypeOf ex Is ArgumentException OrElse TypeOf ex Is UnauthorizedAccessException OrElse
+            (TypeOf ex Is System.ServiceModel.FaultException AndAlso DirectCast(ex, System.ServiceModel.FaultException).Code.IsSenderFault)
             respuesta.StatusCode = 400
             Mostrar(contexto, "El QR ya venció o no se puede confirmar. Genera otro desde Mis penalizaciones.")
         Catch ex As Exception

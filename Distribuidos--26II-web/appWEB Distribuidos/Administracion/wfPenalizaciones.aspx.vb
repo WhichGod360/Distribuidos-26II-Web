@@ -1,5 +1,4 @@
-﻿Imports appWEB_Distribuidos.Librerias
-Imports System.Data
+﻿Imports System.Data
 Imports System.Linq
 
 Public Class Penalizaciones
@@ -14,7 +13,7 @@ Public Class Penalizaciones
     End Sub
 
     Private Sub Listar()
-        Dim datos = Servicio.BuscarTiposPenalizacion(txtBuscar.Text, Nothing)
+        Dim datos = WS.BuscarTiposPenalizacion(txtBuscar.Text, Nothing)
         grvDatos.DataSource = datos
         grvDatos.DataBind()
     End Sub
@@ -41,7 +40,7 @@ Public Class Penalizaciones
         EliminarId = 0
         pnlEditor.Visible = False
         pnlConfirmar.Visible = False
-        Dim a = Servicio.ObtenerTipoPenalizacion(id)
+        Dim a = WS.ObtenerTipoPenalizacion(id)
         If a Is Nothing Then Throw New InvalidOperationException("La penalización ya no existe.")
         txtTipo.Text = a.TipoPenalizacion
         txtDescripcion.Text = a.DescripcionPenalizacion
@@ -94,9 +93,9 @@ Public Class Penalizaciones
             Dim dias As Integer? = Nothing
             If Not String.IsNullOrWhiteSpace(txtDias.Text) Then dias = Entero(txtDias.Text, 1)
             If RegistroId = 0 Then
-                Comprobar(Servicio.AgregarTipoPenalizacion(txtTipo.Text, txtDescripcion.Text, monto, chkActivo.Checked, dias))
+                Comprobar(WS.AgregarTipoPenalizacion(txtTipo.Text, txtDescripcion.Text, monto, chkActivo.Checked, dias))
             Else
-                Comprobar(Servicio.ActualizarTipoPenalizacion(RegistroId, txtTipo.Text, txtDescripcion.Text, monto, chkActivo.Checked, dias))
+                Comprobar(WS.ActualizarTipoPenalizacion(RegistroId, txtTipo.Text, txtDescripcion.Text, monto, chkActivo.Checked, dias))
             End If
             Guardado()
         End Sub)
@@ -119,7 +118,7 @@ Public Class Penalizaciones
     Protected Sub btnConfirmar_Click(sender As Object, e As EventArgs) Handles btnConfirmar.Click
         Ejecutar(lblMensaje, Sub()
             If EliminarId <= 0 Then Throw New InvalidOperationException("Confirma un registro antes de continuar.")
-            Comprobar(Servicio.CambiarEstadoTipoPenalizacion(EliminarId, False))
+            Comprobar(WS.CambiarEstadoTipoPenalizacion(EliminarId, False))
             Guardado()
         End Sub)
     End Sub

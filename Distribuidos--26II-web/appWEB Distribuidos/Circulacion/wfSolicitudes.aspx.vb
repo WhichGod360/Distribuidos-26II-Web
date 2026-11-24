@@ -1,8 +1,8 @@
-﻿Imports appWEB_Distribuidos.Librerias
-Imports System.Linq
+﻿Imports System.Linq
 
 Public Class SolicitudesWeb
     Inherits PaginaMantenimiento
+
     Private solicitudEntrega As SolicitudPrestamo
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -13,7 +13,7 @@ Public Class SolicitudesWeb
     End Sub
 
     Private Sub Listar()
-        grvDatos.DataSource = Servicio.ListarSolicitudes().Where(Function(s) (ddlEstado.SelectedValue = "Todos" OrElse s.EstadoActual = ddlEstado.SelectedValue) AndAlso FormulariosWeb.Coincide(s.IdSolicitud & " " & s.NombreLector & " " & s.DniLector & " " & s.Libros, txtBuscar.Text)).ToList()
+        grvDatos.DataSource = WS.ListarSolicitudes().Where(Function(s) (ddlEstado.SelectedValue = "Todos" OrElse s.EstadoActual = ddlEstado.SelectedValue) AndAlso FormulariosWeb.Coincide(s.IdSolicitud & " " & s.NombreLector & " " & s.DniLector & " " & s.Libros, txtBuscar.Text)).ToList()
         grvDatos.DataBind()
     End Sub
 
@@ -25,7 +25,7 @@ Public Class SolicitudesWeb
     End Function
 
     Private Function Actual() As SolicitudPrestamo
-        Dim s = Servicio.ListarSolicitudes().FirstOrDefault(Function(x) x.IdSolicitud = RegistroId)
+        Dim s = WS.ListarSolicitudes().FirstOrDefault(Function(x) x.IdSolicitud = RegistroId)
         If s Is Nothing Then Throw New InvalidOperationException("Actualiza el listado de solicitudes.")
         Return s
     End Function
@@ -64,8 +64,8 @@ Public Class SolicitudesWeb
         Ejecutar(lblMensaje, Sub()
             If Not pnlConfirmar.Visible Then Throw New InvalidOperationException("Selecciona una acción antes de confirmar.")
             Select Case CStr(ViewState("Accion"))
-                Case "aprobar" : Servicio.AprobarSolicitud(RegistroId)
-                Case "rechazar" : Servicio.RechazarSolicitud(RegistroId)
+                Case "aprobar" : WS.AprobarSolicitud(RegistroId)
+                Case "rechazar" : WS.RechazarSolicitud(RegistroId)
                 Case Else : Throw New InvalidOperationException("Selecciona una acción válida.")
             End Select
             Guardado()
@@ -87,7 +87,7 @@ Public Class SolicitudesWeb
     Protected Sub Copias(sender As Object, e As GridViewRowEventArgs) Handles grvEntrega.RowDataBound
         If e.Row.RowType <> DataControlRowType.DataRow Then Return
         Dim detalle = DirectCast(e.Row.DataItem, DetalleSolicitudPrestamo)
-        FormulariosWeb.Lista(DirectCast(e.Row.FindControl("ddlCopia"), DropDownList), Servicio.ListarEjemplaresDisponibles(detalle.IdLibro, solicitudEntrega.IdUsuario), "IdEjemplar", "IdEjemplar")
+        FormulariosWeb.Lista(DirectCast(e.Row.FindControl("ddlCopia"), DropDownList), WS.ListarEjemplaresDisponibles(detalle.IdLibro, solicitudEntrega.IdUsuario), "IdEjemplar", "IdEjemplar")
     End Sub
 
     Protected Sub Entregar(sender As Object, e As EventArgs) Handles btnEntregar.Click
@@ -97,7 +97,7 @@ Public Class SolicitudesWeb
             Dim libros = grvEntrega.DataKeys.Cast(Of DataKey)().Select(Function(clave) CInt(clave.Value))
             If Not (s.EstaVigente AndAlso s.EstadoActual = "Aprobada") OrElse Not libros.OrderBy(Function(x) x).SequenceEqual(s.Detalles.Select(Function(d) d.IdLibro).OrderBy(Function(x) x)) Then Throw New InvalidOperationException("La solicitud cambió. Prepara nuevamente la entrega.")
 
-            Dim copias As New Dictionary(Of Integer, Integer)()
+            Dim copias As New List(Of EjemplarEntregaSoap)()
             For Each fila As GridViewRow In grvEntrega.Rows
                 Dim idLibro = CInt(grvEntrega.DataKeys(fila.RowIndex).Value)
                 Dim selector = DirectCast(fila.FindControl("ddlCopia"), DropDownList)
@@ -105,9 +105,9 @@ Public Class SolicitudesWeb
                     Dim titulo = s.Detalles.First(Function(d) d.IdLibro = idLibro).TituloLibro
                     Throw New ArgumentException("Selecciona un ejemplar para «" & titulo & "».")
                 End If
-                copias.Add(idLibro, FormulariosWeb.Id(selector))
+                copias.Add(New EjemplarEntregaSoap With {.IdLibro = idLibro, .IdEjemplar = FormulariosWeb.Id(selector)})
             Next
-            Dim prestamos = Servicio.EntregarSolicitud(RegistroId, copias.Select(Function(copia) New EjemplarEntregaSoap With {.IdLibro = copia.Key, .IdEjemplar = copia.Value}).ToArray())
+            Dim prestamos = WS.EntregarSolicitud(RegistroId, copias.ToArray())
             Guardado("Entrega registrada como un solo préstamo N.º " & prestamos(0) & " con " & copias.Count & " ejemplar(es).")
         End Sub)
     End Sub

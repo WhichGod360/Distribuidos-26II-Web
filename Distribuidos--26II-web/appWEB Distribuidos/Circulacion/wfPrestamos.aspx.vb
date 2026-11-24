@@ -1,5 +1,4 @@
-﻿Imports appWEB_Distribuidos.Librerias
-Imports System.Linq
+﻿Imports System.Linq
 
 Public Class PrestamosWeb
     Inherits PaginaMantenimiento
@@ -18,13 +17,13 @@ Public Class PrestamosWeb
     Private Function Datos() As Prestamo()
         Dim lector As Integer
         If Integer.TryParse(Request.QueryString("lector"), lector) AndAlso lector > 0 Then
-            Return Servicio.BuscarPrestamosPorLector(lector, ddlEstado.SelectedValue, txtBuscar.Text)
+            Return WS.BuscarPrestamosPorLector(lector, ddlEstado.SelectedValue, txtBuscar.Text)
         End If
-        Return Servicio.ListarPrestamos(ddlEstado.SelectedValue, txtBuscar.Text)
+        Return WS.ListarPrestamos(ddlEstado.SelectedValue, txtBuscar.Text)
     End Function
 
     Private Sub Listar()
-        grvDatos.DataSource = Datos().Select(Function(p) New With {p.IdPrestamo, p.NombreLector, p.TituloLibro, p.Ejemplares, p.FechaFin, p.FechaRetorno, .Estado = p.EstadoEnVista}).ToList()
+        grvDatos.DataSource = Datos().Select(Function(p) New With {p.IdPrestamo, p.NombreLector, p.TituloLibro, p.Ejemplares, p.FechaFin, p.FechaRetorno, .Estado = p.EstadoTexto}).ToList()
         grvDatos.DataBind()
     End Sub
 
@@ -35,10 +34,10 @@ Public Class PrestamosWeb
         ddlLibro.Items.Clear()
         ddlEjemplar.Items.Clear()
         lstSeleccion.Items.Clear()
-        litPlazo.Text = "Inicio: " & Date.Today.ToString("dd/MM/yyyy") & " · Límite: " & Servicio.FechaLimitePrestamo(Date.Today).ToString("dd/MM/yyyy")
+        litPlazo.Text = "Inicio: " & Date.Today.ToString("dd/MM/yyyy") & " · Límite: " & WS.FechaLimitePrestamo(Date.Today).ToString("dd/MM/yyyy")
         Dim id As Integer
         If Integer.TryParse(Request.QueryString("lector"), id) AndAlso id > 0 Then
-            FormulariosWeb.Lista(ddlLector, Servicio.BuscarLectores("").Where(Function(u) u.IdUsuario = id).ToList(), "NombreCompleto", "IdUsuario")
+            FormulariosWeb.Lista(ddlLector, WS.BuscarLectores("").Where(Function(u) u.IdUsuario = id).ToList(), "NombreCompleto", "IdUsuario")
             If ddlLector.Items.FindByValue(id.ToString()) IsNot Nothing Then
                 ddlLector.SelectedValue = id.ToString()
                 CargarLibros()
@@ -49,13 +48,13 @@ Public Class PrestamosWeb
     Private Sub CargarLibros()
         ddlLibro.Items.Clear()
         ddlEjemplar.Items.Clear()
-        FormulariosWeb.Lista(ddlLibro, Servicio.ListarLibrosDisponibles(FormulariosWeb.Id(ddlLector)), "TituloLibro", "IdLibro")
+        FormulariosWeb.Lista(ddlLibro, WS.ListarLibrosDisponibles(FormulariosWeb.Id(ddlLector)), "TituloLibro", "IdLibro")
     End Sub
 
     Protected Sub btnBuscarLector_Click(sender As Object, e As EventArgs) Handles btnBuscarLector.Click
         Ejecutar(lblMensaje, Sub()
             If String.IsNullOrWhiteSpace(txtLector.Text) Then Throw New ArgumentException("Escribe el nombre, DNI o correo del lector.")
-            FormulariosWeb.Lista(ddlLector, Servicio.BuscarLectores(txtLector.Text).Select(Function(u) New With {u.IdUsuario, .Texto = u.NombreCompleto & " · " & u.NumeroDniUsuario}).ToList(), "Texto", "IdUsuario")
+            FormulariosWeb.Lista(ddlLector, WS.BuscarLectores(txtLector.Text).Select(Function(u) New With {u.IdUsuario, .Texto = u.NombreCompleto & " · " & u.NumeroDniUsuario}).ToList(), "Texto", "IdUsuario")
             ddlLibro.Items.Clear()
             ddlEjemplar.Items.Clear()
             lstSeleccion.Items.Clear()
@@ -69,7 +68,7 @@ Public Class PrestamosWeb
 
     Protected Sub LibroCambiado(sender As Object, e As EventArgs) Handles ddlLibro.SelectedIndexChanged
         ddlEjemplar.Items.Clear()
-        Ejecutar(lblMensaje, Sub() FormulariosWeb.Lista(ddlEjemplar, Servicio.ListarEjemplaresDisponibles(FormulariosWeb.Id(ddlLibro), FormulariosWeb.Id(ddlLector)), "IdEjemplar", "IdEjemplar"))
+        Ejecutar(lblMensaje, Sub() FormulariosWeb.Lista(ddlEjemplar, WS.ListarEjemplaresDisponibles(FormulariosWeb.Id(ddlLibro), FormulariosWeb.Id(ddlLector)), "IdEjemplar", "IdEjemplar"))
     End Sub
 
     Protected Sub Agregar(sender As Object, e As EventArgs) Handles btnAgregar.Click
@@ -94,7 +93,7 @@ Public Class PrestamosWeb
                 If FormulariosWeb.Id(ddlEjemplar) <= 0 Then Throw New ArgumentException("Selecciona un ejemplar.")
                 ids.Add(FormulariosWeb.Id(ddlEjemplar))
             End If
-            Dim id = Servicio.RegistrarPrestamo(FormulariosWeb.Id(ddlLector), ids.ToArray(), Date.Today)
+            Dim id = WS.RegistrarPrestamo(FormulariosWeb.Id(ddlLector), ids.ToArray(), Date.Today)
             Guardado("Préstamo N.º " & id & " registrado con " & ids.Count & " ejemplar(es).")
         End Sub)
     End Sub
@@ -107,7 +106,7 @@ Public Class PrestamosWeb
             Dim p = Datos().FirstOrDefault(Function(x) x.IdPrestamo = RegistroId)
             If p Is Nothing Then Throw New InvalidOperationException("Actualiza el listado de préstamos.")
             litDetalle.Text = "Préstamo N.º " & p.IdPrestamo
-            litDatos.Text = p.NombreLector & " · " & p.TituloLibro & " · Ejemplares " & p.Ejemplares & " · " & p.EstadoEnVista
+            litDatos.Text = p.NombreLector & " · " & p.TituloLibro & " · Ejemplares " & p.Ejemplares & " · " & p.EstadoTexto
             lnkComprobante.NavigateUrl = "~/Circulacion/wfComprobante.aspx?prestamo=" & p.IdPrestamo
             lnkDevolucion.Visible = p.FechaRetorno.HasValue
             lnkDevolucion.NavigateUrl = lnkComprobante.NavigateUrl & "&devolucion=1"
@@ -123,7 +122,7 @@ Public Class PrestamosWeb
         Ejecutar(lblMensaje, Sub()
             Dim fecha = FechaOpcional(txtRetorno.Text)
             If Not fecha.HasValue Then Throw New ArgumentException("Selecciona la fecha de devolución.")
-            Dim calculo = Servicio.PrevisualizarDevolucion(RegistroId, fecha.Value)
+            Dim calculo = WS.PrevisualizarDevolucion(RegistroId, fecha.Value)
             Dim clave = Guid.NewGuid().ToString("N")
             If ViewState("Calculo") IsNot Nothing Then Session.Remove("Devolucion." & CStr(ViewState("Calculo")))
             Session("Devolucion." & clave) = calculo
@@ -139,7 +138,7 @@ Public Class PrestamosWeb
             Dim calculo = TryCast(Session(clave), DevolucionCalculada)
             Dim fecha = FechaOpcional(txtRetorno.Text)
             If calculo Is Nothing OrElse calculo.IdPrestamo <> RegistroId OrElse Not fecha.HasValue OrElse fecha.Value.Date <> calculo.FechaRetorno.Date Then Throw New InvalidOperationException("Calcula nuevamente la devolución antes de confirmarla.")
-            Dim resultado = Servicio.ConfirmarDevolucion(calculo)
+            Dim resultado = WS.ConfirmarDevolucion(calculo)
             Session.Remove(clave)
             Guardado("Devolución registrada. " & resultado.Resumen)
         End Sub)

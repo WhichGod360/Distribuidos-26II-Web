@@ -1,6 +1,7 @@
 ﻿Imports System.Linq
 Public Class Ejemplares
     Inherits PaginaMantenimiento
+
     Private Property LibroConsultado As Integer
         Get
             Return If(ViewState("Libro") Is Nothing, 0, CInt(ViewState("Libro")))
@@ -11,7 +12,7 @@ Public Class Ejemplares
     End Property
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         If Not IsPostBack Then Ejecutar(lblMensaje, Sub()
-            ddlLibro.DataSource = Servicio.ListarLibros()
+            ddlLibro.DataSource = WS.ListarLibros()
             ddlLibro.DataTextField = "TituloLibro"
             ddlLibro.DataValueField = "IdLibro"
             ddlLibro.DataBind()
@@ -24,7 +25,7 @@ Public Class Ejemplares
         End Sub)
     End Sub
     Private Sub Listar()
-        grvDatos.DataSource = Servicio.ListarEjemplares(LibroConsultado)
+        grvDatos.DataSource = WS.ListarEjemplares(LibroConsultado)
         grvDatos.DataBind()
     End Sub
     Protected Sub btnConsultar_Click(sender As Object, e As EventArgs) Handles btnConsultar.Click, ddlLibro.SelectedIndexChanged
@@ -80,9 +81,9 @@ Public Class Ejemplares
             End If
             Dim libro = CInt(ViewState("LibroPendiente"))
             If CStr(ViewState("Operacion")) = "agregar" Then
-                Comprobar(Servicio.AgregarEjemplar(libro))
+                Comprobar(WS.AgregarEjemplar(libro))
             ElseIf CStr(ViewState("Operacion")) = "estado" AndAlso EliminarId > 0 Then
-                Comprobar(Servicio.CambiarEstadoEjemplar(libro, EliminarId, CBool(ViewState("NuevoEstado"))))
+                Comprobar(WS.CambiarEstadoEjemplar(libro, EliminarId, CBool(ViewState("NuevoEstado"))))
             Else
                 Throw New InvalidOperationException("Confirma primero una operación.")
             End If

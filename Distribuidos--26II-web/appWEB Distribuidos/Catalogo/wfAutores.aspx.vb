@@ -1,5 +1,4 @@
-﻿Imports appWEB_Distribuidos.Librerias
-Imports System.Data
+﻿Imports System.Data
 Imports System.Linq
 
 Public Class Autores
@@ -14,7 +13,7 @@ Public Class Autores
     End Sub
 
     Private Sub Listar()
-        Dim datos = Servicio.ListarAutores().Where(Function(a) Coincide(a.NombreAutor & " " & a.NacionalidadAutor, txtBuscar.Text)).ToList()
+        Dim datos = WS.ListarAutores().Where(Function(a) Coincide(a.NombreAutor & " " & a.NacionalidadAutor, txtBuscar.Text)).ToList()
         grvDatos.DataSource = datos
         grvDatos.DataBind()
     End Sub
@@ -41,7 +40,7 @@ Public Class Autores
         EliminarId = 0
         pnlEditor.Visible = False
         pnlConfirmar.Visible = False
-        Dim a = Servicio.ObtenerAutor(id)
+        Dim a = WS.ObtenerAutor(id)
         If a Is Nothing Then Throw New InvalidOperationException("El autor ya no existe.")
         txtNombre.Text = a.NombreAutor
         txtNacionalidad.Text = a.NacionalidadAutor
@@ -91,9 +90,9 @@ Public Class Autores
     Protected Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Ejecutar(lblMensaje, Sub()
             If RegistroId = 0 Then
-                Comprobar(Servicio.AgregarAutor(txtNombre.Text, txtNacionalidad.Text, FechaOpcional(txtNacimiento.Text), FechaOpcional(txtFallecimiento.Text), txtBiografia.Text))
+                Comprobar(WS.AgregarAutor(txtNombre.Text, txtNacionalidad.Text, FechaOpcional(txtNacimiento.Text), FechaOpcional(txtFallecimiento.Text), txtBiografia.Text))
             Else
-                Comprobar(Servicio.ActualizarAutor(RegistroId, txtNombre.Text, txtNacionalidad.Text, FechaOpcional(txtNacimiento.Text), FechaOpcional(txtFallecimiento.Text), txtBiografia.Text))
+                Comprobar(WS.ActualizarAutor(RegistroId, txtNombre.Text, txtNacionalidad.Text, FechaOpcional(txtNacimiento.Text), FechaOpcional(txtFallecimiento.Text), txtBiografia.Text))
             End If
             Guardado()
         End Sub)
@@ -116,7 +115,7 @@ Public Class Autores
     Protected Sub btnConfirmar_Click(sender As Object, e As EventArgs) Handles btnConfirmar.Click
         Ejecutar(lblMensaje, Sub()
             If EliminarId <= 0 Then Throw New InvalidOperationException("Confirma un registro antes de continuar.")
-            Comprobar(Servicio.EliminarAutor(EliminarId))
+            Comprobar(WS.EliminarAutor(EliminarId))
             Guardado()
         End Sub)
     End Sub

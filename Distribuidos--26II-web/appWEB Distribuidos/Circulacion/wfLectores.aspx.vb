@@ -1,5 +1,4 @@
-﻿Imports appWEB_Distribuidos.Librerias
-Imports System.Linq
+﻿Imports System.Linq
 
 Public Class BuscarLectores
     Inherits PaginaMantenimiento
@@ -31,7 +30,7 @@ Public Class BuscarLectores
     Private Sub Listar()
         If String.IsNullOrWhiteSpace(txtBuscar.Text) Then Throw New ArgumentException("Escribe un nombre, apellido, DNI o correo.")
         grvLectores.EmptyDataText = "No se encontraron lectores que coincidan con la búsqueda."
-        grvLectores.DataSource = Servicio.BuscarLectores(txtBuscar.Text)
+        grvLectores.DataSource = WS.BuscarLectores(txtBuscar.Text)
         grvLectores.DataBind()
     End Sub
 
@@ -52,10 +51,10 @@ Public Class BuscarLectores
         pnlHistorial.Visible = False
         Ejecutar(lblMensaje, Sub()
             Dim id = CInt(grvLectores.SelectedDataKey.Value)
-            Dim lector = Servicio.BuscarLectores(txtBuscar.Text).FirstOrDefault(Function(u) u.IdUsuario = id)
+            Dim lector = WS.BuscarLectores(txtBuscar.Text).FirstOrDefault(Function(u) u.IdUsuario = id)
             If lector Is Nothing Then Throw New InvalidOperationException("Busca nuevamente al lector.")
             litLector.Text = lector.NombreCompleto & " · DNI " & lector.NumeroDniUsuario
-            grvPrestamos.DataSource = Servicio.ListarPrestamosPorLector(id).Select(Function(p) New With {p.IdPrestamo, p.TituloLibro, p.FechaInicio, p.FechaFin, p.FechaRetorno, .Estado = p.EstadoEnVista}).ToList()
+            grvPrestamos.DataSource = WS.ListarPrestamosPorLector(id).Select(Function(p) New With {p.IdPrestamo, p.TituloLibro, p.FechaInicio, p.FechaFin, p.FechaRetorno, .Estado = p.EstadoTexto}).ToList()
             grvPrestamos.DataBind()
             lnkNuevo.NavigateUrl = "~/Circulacion/wfPrestamos.aspx?nuevo=1&lector=" & id
             lnkPrestamos.NavigateUrl = "~/Circulacion/wfPrestamos.aspx?lector=" & id

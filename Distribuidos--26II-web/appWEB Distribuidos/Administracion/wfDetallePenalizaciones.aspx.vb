@@ -1,12 +1,11 @@
-﻿Imports appWEB_Distribuidos.Librerias
-Imports System.Linq
+﻿Imports System.Linq
 
 Public Class DetallePenalizacionesWeb
     Inherits PaginaMantenimiento
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         If Not IsPostBack Then Ejecutar(lblMensaje, Sub()
-            FormulariosWeb.Lista(ddlTipoFiltro, Servicio.ListarTiposPenalizacion(), "DescripcionCombo", "IdPenalizacion", "Todas las penalizaciones")
+            FormulariosWeb.Lista(ddlTipoFiltro, WS.ListarTiposPenalizacion(), "DescripcionCombo", "IdPenalizacion", "Todas las penalizaciones")
             Dim tipo As Integer
             If Integer.TryParse(Request.QueryString("tipo"), tipo) AndAlso ddlTipoFiltro.Items.FindByValue(tipo.ToString()) IsNot Nothing Then ddlTipoFiltro.SelectedValue = tipo.ToString()
             Listar()
@@ -14,12 +13,12 @@ Public Class DetallePenalizacionesWeb
         End Sub)
     End Sub
     Private Sub Listar()
-        grvDatos.DataSource = Servicio.ListarCargos(Entero(ddlTipoFiltro.SelectedValue)).Where(Function(d) (ddlPagoFiltro.SelectedValue = "" OrElse d.EstadoPago = ddlPagoFiltro.SelectedValue) AndAlso FormulariosWeb.Coincide(d.IdPrestamo & " " & d.NombreUsuario & " " & d.TituloLibro & " " & d.Motivo, txtBuscar.Text)).ToList()
+        grvDatos.DataSource = WS.ListarCargos(Entero(ddlTipoFiltro.SelectedValue)).Where(Function(d) (ddlPagoFiltro.SelectedValue = "" OrElse d.EstadoPago = ddlPagoFiltro.SelectedValue) AndAlso FormulariosWeb.Coincide(d.IdPrestamo & " " & d.NombreUsuario & " " & d.TituloLibro & " " & d.Motivo, txtBuscar.Text)).ToList()
         grvDatos.DataBind()
     End Sub
     Private Sub Opciones(nuevo As Boolean)
-        FormulariosWeb.Lista(ddlTipo, If(nuevo, Servicio.ListarTiposPenalizacionActivos(), Servicio.ListarTiposPenalizacion()), "DescripcionCombo", "IdPenalizacion")
-        FormulariosWeb.Lista(ddlPrestamo, Servicio.ListarPrestamosParaCargo(), "Texto", "IdPrestamo")
+        FormulariosWeb.Lista(ddlTipo, If(nuevo, WS.ListarTiposPenalizacionActivos(), WS.ListarTiposPenalizacion()), "DescripcionCombo", "IdPenalizacion")
+        FormulariosWeb.Lista(ddlPrestamo, WS.ListarPrestamosParaCargo(), "Texto", "IdPrestamo")
         ddlTipo.Enabled = nuevo
         ddlPrestamo.Enabled = nuevo
     End Sub
@@ -40,7 +39,7 @@ Public Class DetallePenalizacionesWeb
         pnlEditor.Visible = False
         Ejecutar(lblMensaje, Sub()
             Dim id = CInt(grvDatos.SelectedDataKey.Value)
-            Dim d = Servicio.ListarCargos(0).FirstOrDefault(Function(x) x.IdDetallePenalizacion = id)
+            Dim d = WS.ListarCargos(0).FirstOrDefault(Function(x) x.IdDetallePenalizacion = id)
             If d Is Nothing Then Throw New InvalidOperationException("El cargo ya no está disponible.")
             Opciones(False)
             RegistroId = id
@@ -61,10 +60,10 @@ Public Class DetallePenalizacionesWeb
             If RegistroId = 0 Then
                 If String.IsNullOrEmpty(ddlTipo.SelectedValue) OrElse ddlTipo.SelectedValue = "0" Then Throw New ArgumentException("Selecciona un tipo de penalización.")
                 If String.IsNullOrEmpty(ddlPrestamo.SelectedValue) OrElse ddlPrestamo.SelectedValue = "0" Then Throw New ArgumentException("Selecciona un préstamo.")
-                Comprobar(Servicio.AgregarCargo(txtMotivo.Text.Trim(), FormulariosWeb.Id(ddlTipo), FormulariosWeb.Id(ddlPrestamo), ddlPago.SelectedValue))
+                Comprobar(WS.AgregarCargo(txtMotivo.Text.Trim(), FormulariosWeb.Id(ddlTipo), FormulariosWeb.Id(ddlPrestamo), ddlPago.SelectedValue))
             Else
                 Dim pago = If(ddlPago.SelectedValue = CStr(ViewState("PagoOriginal")), Nothing, ddlPago.SelectedValue)
-                Comprobar(Servicio.ActualizarCargo(RegistroId, txtMotivo.Text.Trim(), CInt(ViewState("TipoOriginal")), CInt(ViewState("PrestamoOriginal")), pago))
+                Comprobar(WS.ActualizarCargo(RegistroId, txtMotivo.Text.Trim(), CInt(ViewState("TipoOriginal")), CInt(ViewState("PrestamoOriginal")), pago))
             End If
             Guardado()
         End Sub)

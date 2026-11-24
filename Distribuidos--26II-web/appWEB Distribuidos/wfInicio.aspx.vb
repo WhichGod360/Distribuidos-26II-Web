@@ -1,5 +1,4 @@
-﻿Imports appWEB_Distribuidos.Librerias
-Imports System.Linq
+﻿Imports System.Linq
 
 Public Class PanelInicio
     Inherits PaginaMantenimiento
@@ -12,7 +11,7 @@ Public Class PanelInicio
     End Sub
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         If Not IsPostBack Then Ejecutar(lblMensaje, Sub()
-            FormulariosWeb.Lista(ddlCategoria, Servicio.ListarCategoriasIndicadores(), "NombreCategoria", "IdCategoria", Nothing)
+            FormulariosWeb.Lista(ddlCategoria, WS.ListarCategoriasIndicadores(), "NombreCategoria", "IdCategoria", Nothing)
             Restablecer()
             Dim admin = AccesoWeb.EsAdministrador
             litTitulo.Text = If(admin, "Resumen de administración", "Tu jornada en la biblioteca")
@@ -33,7 +32,7 @@ Public Class PanelInicio
         Dim desde = FechaOpcional(txtDesde.Text)
         Dim hasta = FechaOpcional(txtHasta.Text)
         If Not desde.HasValue OrElse Not hasta.HasValue Then Throw New ArgumentException("Selecciona ambas fechas del periodo.")
-        Dim d = Servicio.ConsultarIndicadores(desde.Value, hasta.Value, Entero(ddlCategoria.SelectedValue), ddlEstado.SelectedValue)
+        Dim d = WS.ConsultarIndicadores(desde.Value, hasta.Value, Entero(ddlCategoria.SelectedValue), ddlEstado.SelectedValue)
         Dim admin = AccesoWeb.EsAdministrador
         litCap0.Text = If(admin, "Préstamos en selección", "Activos en selección")
         litCap1.Text = If(admin, "Lectores atendidos", "Vencidos en selección")

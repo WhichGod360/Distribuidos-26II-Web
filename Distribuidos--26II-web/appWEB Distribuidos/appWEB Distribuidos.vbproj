@@ -76,6 +76,7 @@
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
     <Import Include="System.Data" />
+    <Import Include="appWEB_Distribuidos.Libreria" />
     <Import Include="System.Linq" />
     <Import Include="System.Xml.Linq" />
     <Import Include="System.Diagnostics" />
@@ -94,92 +95,92 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.ActualizarAutorResponse.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.ActualizarAutorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.ActualizarTipoPenalizacionResponse.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.ActualizarTipoPenalizacionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.AgregarAutorResponse.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.AgregarAutorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.AgregarTipoPenalizacionResponse.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.AgregarTipoPenalizacionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.Autor.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.Autor.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.AvisoLector.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.AvisoLector.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.BibliotecaLectorSoap.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.BibliotecaLectorSoap.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.Bitacora.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.Bitacora.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.BuscarTiposPenalizacionResponse.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.BuscarTiposPenalizacionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.Categoria.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.Categoria.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.ComprobanteBiblioteca.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.ComprobanteBiblioteca.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.DashboardResumen.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.DashboardResumen.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.DetallePenalizacion.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.DetallePenalizacion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.DevolucionCalculada.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.DevolucionCalculada.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.Ejemplar.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.Ejemplar.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.Libro.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.Libro.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.ListarBitacoraResponse.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.ListarBitacoraResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.Penalizacion.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.Penalizacion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.Prestamo.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.Prestamo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.PrestamoResumen.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.PrestamoResumen.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.ResultadoPagoDemoSoap.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.ResultadoPagoDemoSoap.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.ResumenPenalizaciones.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.ResumenPenalizaciones.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.RolUsuario.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.RolUsuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.SolicitudPrestamo.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.SolicitudPrestamo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Connected Services\Librerias\appWEB_Distribuidos.Librerias.UsuarioSoap.datasource">
+    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.UsuarioSoap.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\Librerias\swBiblioteca.disco" />
-    <None Include="Connected Services\Librerias\configuration91.svcinfo" />
-    <None Include="Connected Services\Librerias\configuration.svcinfo" />
-    <None Include="Connected Services\Librerias\Reference.svcmap">
+    <None Include="Connected Services\Libreria\swBiblioteca.disco" />
+    <None Include="Connected Services\Libreria\configuration91.svcinfo" />
+    <None Include="Connected Services\Libreria\configuration.svcinfo" />
+    <None Include="Connected Services\Libreria\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\Librerias\Reference.vb">
+    <Compile Include="Connected Services\Libreria\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -220,7 +221,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\Librerias\swBiblioteca.wsdl" />
+    <None Include="Connected Services\Libreria\swBiblioteca.wsdl" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -295,7 +296,7 @@
   </Target>
   <ItemGroup>
     <Compile Include="Global.asax.vb" />
-    <Compile Include="Comun\ClienteSoap.vb" />
+    <Compile Include="Comun\ServicioBiblioteca.vb" />
     <Compile Include="Comun\PresentacionSoap.vb" />
     <Content Include="Global.asax" />
     <Content Include="Default.aspx" />
@@ -485,8 +486,6 @@
     <Content Include="Lector\PagoDemo.ashx" />
     <Content Include="Scripts\pago-demo.js" />
     <Content Include="App_Data\YapeQr.png" />
-    <Content Include="App_Data\MigracionPagoDemo.sql" />
-    <Content Include="App_Data\MigracionPagoYape.sql" />
     <Content Include="Lector\wfPagarYape.aspx" />
     <Compile Include="Lector\wfPagarYape.aspx.vb">
       <DependentUpon>wfPagarYape.aspx</DependentUpon>
@@ -505,6 +504,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\Librerias\" />
+    <WCFMetadataStorage Include="Connected Services\Libreria\" />
   </ItemGroup>
 </Project>

@@ -1,11 +1,10 @@
-﻿Imports appWEB_Distribuidos.Librerias
-
+﻿
 Public Class UsuariosWeb
     Inherits PaginaAdministrador
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         If Not IsPostBack Then Ejecutar(lblMensaje, Sub()
-            Dim roles = Servicio.ListarRoles()
+            Dim roles = WS.ListarRoles()
             FormulariosWeb.Lista(ddlRolFiltro, roles, "NombreRolUsuario", "IdRolUsuario", "Todos los roles")
             FormulariosWeb.Lista(ddlRol, roles, "NombreRolUsuario", "IdRolUsuario")
             Listar()
@@ -13,7 +12,7 @@ Public Class UsuariosWeb
         End Sub)
     End Sub
     Private Sub Listar()
-        grvDatos.DataSource = Servicio.ListarUsuarios(txtBuscar.Text, Entero(ddlRolFiltro.SelectedValue), ddlEstadoFiltro.SelectedValue)
+        grvDatos.DataSource = WS.ListarUsuarios(txtBuscar.Text, Entero(ddlRolFiltro.SelectedValue), ddlEstadoFiltro.SelectedValue)
         grvDatos.DataBind()
     End Sub
     Protected Sub Nuevo(sender As Object, e As EventArgs) Handles btnNuevo.Click
@@ -32,7 +31,7 @@ Public Class UsuariosWeb
         pnlEditor.Visible = False
         pnlConfirmar.Visible = False
         Ejecutar(lblMensaje, Sub()
-            Dim u = Servicio.ObtenerUsuario(CInt(grvDatos.SelectedDataKey.Value))
+            Dim u = WS.ObtenerUsuario(CInt(grvDatos.SelectedDataKey.Value))
             campos.Cargar(u)
             RegistroId = u.IdUsuario
             ddlRol.SelectedValue = u.IdRolUsuario.ToString()
@@ -50,7 +49,7 @@ Public Class UsuariosWeb
         Ejecutar(lblMensaje, Sub()
             Dim u = campos.Leer(RegistroId)
             If RegistroId = AccesoWeb.UsuarioActual(Context).IdUsuario Then
-                Dim actual = Servicio.ObtenerUsuario(RegistroId)
+                Dim actual = WS.ObtenerUsuario(RegistroId)
                 u.IdRolUsuario = actual.IdRolUsuario
                 u.EstadoUsuario = actual.EstadoUsuario
             Else
@@ -59,9 +58,9 @@ Public Class UsuariosWeb
                 u.EstadoUsuario = ddlEstado.SelectedValue
             End If
             If RegistroId = 0 Then
-                Servicio.CrearUsuario(u, campos.Confirmacion)
+                WS.CrearUsuario(u, campos.Confirmacion)
             Else
-                Servicio.ActualizarUsuario(u)
+                WS.ActualizarUsuario(u)
             End If
             Guardado()
         End Sub)
@@ -69,7 +68,7 @@ Public Class UsuariosWeb
     Protected Sub CambiarEstado(sender As Object, e As EventArgs) Handles btnEstado.Click
         Ejecutar(lblMensaje, Sub()
             If RegistroId = AccesoWeb.UsuarioActual(Context).IdUsuario Then Throw New InvalidOperationException("No puedes cambiar el estado de tu propia cuenta.")
-            Dim u = Servicio.ObtenerUsuario(RegistroId)
+            Dim u = WS.ObtenerUsuario(RegistroId)
             ViewState("EstadoAnterior") = u.EstadoUsuario
             ViewState("EstadoNuevo") = If(String.Equals(u.EstadoUsuario.Trim(), "Activo", StringComparison.OrdinalIgnoreCase), "Inactivo", "Activo")
             litConfirmar.Text = "¿Cambiar la cuenta de " & u.NombreCompleto & " a " & CStr(ViewState("EstadoNuevo")) & "?"
@@ -79,8 +78,8 @@ Public Class UsuariosWeb
     Protected Sub Confirmar(sender As Object, e As EventArgs) Handles btnConfirmar.Click
         Ejecutar(lblMensaje, Sub()
             If RegistroId = AccesoWeb.UsuarioActual(Context).IdUsuario Then Throw New InvalidOperationException("No puedes cambiar el estado de tu propia cuenta.")
-            If Not pnlConfirmar.Visible OrElse Servicio.ObtenerUsuario(RegistroId).EstadoUsuario <> CStr(ViewState("EstadoAnterior")) Then Throw New InvalidOperationException("El usuario cambió. Selecciónalo nuevamente.")
-            Servicio.CambiarEstadoUsuario(RegistroId, CStr(ViewState("EstadoNuevo")))
+            If Not pnlConfirmar.Visible OrElse WS.ObtenerUsuario(RegistroId).EstadoUsuario <> CStr(ViewState("EstadoAnterior")) Then Throw New InvalidOperationException("El usuario cambió. Selecciónalo nuevamente.")
+            WS.CambiarEstadoUsuario(RegistroId, CStr(ViewState("EstadoNuevo")))
             Guardado()
         End Sub)
     End Sub

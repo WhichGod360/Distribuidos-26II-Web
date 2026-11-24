@@ -1,5 +1,4 @@
-﻿Imports appWEB_Distribuidos.Librerias
-Imports System.Data
+﻿Imports System.Data
 Imports System.Linq
 
 Public Class Categorias
@@ -14,7 +13,7 @@ Public Class Categorias
     End Sub
 
     Private Sub Listar()
-        Dim tabla = Servicio.BuscarCategorias(txtBuscar.Text, "Todos")
+        Dim tabla = WS.BuscarCategorias(txtBuscar.Text, "Todos")
         Dim datos = tabla
         grvDatos.DataSource = datos
         grvDatos.DataBind()
@@ -39,7 +38,7 @@ Public Class Categorias
         EliminarId = 0
         pnlEditor.Visible = False
         pnlConfirmar.Visible = False
-        Dim tabla = Servicio.ObtenerCategoria(id)
+        Dim tabla = WS.ObtenerCategoria(id)
         If tabla.Rows.Count = 0 Then Throw New InvalidOperationException("La categoría ya no existe.")
         txtNombre.Text = CStr(tabla.Rows(0)("nombre_categoria"))
         chkActivo.Checked = Convert.ToBoolean(tabla.Rows(0)("estado"))
@@ -88,9 +87,9 @@ Public Class Categorias
             Dim nombre = txtNombre.Text.Trim()
             Dim estado = chkActivo.Checked
             Dim resultado = If(RegistroId = 0,
-                              Servicio.AgregarCategoria(nombre, estado),
-                              Servicio.ActualizarCategoria(RegistroId, nombre, estado))
-            If Not resultado AndAlso Servicio.ListarCategorias("Todos").AsEnumerable().Any(
+                              WS.AgregarCategoria(nombre, estado),
+                              WS.ActualizarCategoria(RegistroId, nombre, estado))
+            If Not resultado AndAlso WS.ListarCategorias("Todos").AsEnumerable().Any(
                 Function(fila) CInt(fila("id_categoria")) <> RegistroId AndAlso
                     String.Equals(fila("nombre_categoria").ToString().Trim(), nombre, StringComparison.OrdinalIgnoreCase)) Then
                 Throw New InvalidOperationException("Ya existe una categoría con ese nombre.")
@@ -117,7 +116,7 @@ Public Class Categorias
     Protected Sub btnConfirmar_Click(sender As Object, e As EventArgs) Handles btnConfirmar.Click
         Ejecutar(lblMensaje, Sub()
             If EliminarId <= 0 Then Throw New InvalidOperationException("Confirma un registro antes de continuar.")
-            Comprobar(Servicio.DesactivarCategoria(EliminarId))
+            Comprobar(WS.DesactivarCategoria(EliminarId))
             Guardado()
         End Sub)
     End Sub

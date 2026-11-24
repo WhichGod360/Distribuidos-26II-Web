@@ -37,625 +37,625 @@ appWEB Distribuidos
  Devuelve el objeto de registro Asp.
  </summary>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.ResultadoPagoDemoSoap">
+<member name="T:appWEB_Distribuidos.Libreria.ResultadoPagoDemoSoap">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ResultadoPagoDemoSoap.IdCargo">
+<member name="P:appWEB_Distribuidos.Libreria.ResultadoPagoDemoSoap.IdCargo">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ResultadoPagoDemoSoap.PagoNuevo">
+<member name="P:appWEB_Distribuidos.Libreria.ResultadoPagoDemoSoap.PagoNuevo">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.PrestamoResumen">
+<member name="T:appWEB_Distribuidos.Libreria.PrestamoResumen">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.PrestamoResumen.IdPrestamo">
+<member name="P:appWEB_Distribuidos.Libreria.PrestamoResumen.IdPrestamo">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.PrestamoResumen.NombreUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.PrestamoResumen.NombreUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.PrestamoResumen.TituloLibro">
+<member name="P:appWEB_Distribuidos.Libreria.PrestamoResumen.TituloLibro">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.Penalizacion">
+<member name="T:appWEB_Distribuidos.Libreria.Penalizacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Penalizacion.IdPenalizacion">
+<member name="P:appWEB_Distribuidos.Libreria.Penalizacion.IdPenalizacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Penalizacion.TipoPenalizacion">
+<member name="P:appWEB_Distribuidos.Libreria.Penalizacion.TipoPenalizacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Penalizacion.DescripcionPenalizacion">
+<member name="P:appWEB_Distribuidos.Libreria.Penalizacion.DescripcionPenalizacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Penalizacion.MontoPenalizacion">
+<member name="P:appWEB_Distribuidos.Libreria.Penalizacion.MontoPenalizacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Penalizacion.EstadoPenalizacion">
+<member name="P:appWEB_Distribuidos.Libreria.Penalizacion.EstadoPenalizacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Penalizacion.DiasDesde">
+<member name="P:appWEB_Distribuidos.Libreria.Penalizacion.DiasDesde">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.Categoria">
+<member name="T:appWEB_Distribuidos.Libreria.Categoria">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Categoria.IdCategoria">
+<member name="P:appWEB_Distribuidos.Libreria.Categoria.IdCategoria">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Categoria.NombreCategoria">
+<member name="P:appWEB_Distribuidos.Libreria.Categoria.NombreCategoria">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.PendienteDashboard">
+<member name="T:appWEB_Distribuidos.Libreria.PendienteDashboard">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.PendienteDashboard.IdPrestamo">
+<member name="P:appWEB_Distribuidos.Libreria.PendienteDashboard.IdPrestamo">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.PendienteDashboard.Lector">
+<member name="P:appWEB_Distribuidos.Libreria.PendienteDashboard.Lector">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.PendienteDashboard.Libro">
+<member name="P:appWEB_Distribuidos.Libreria.PendienteDashboard.Libro">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.PendienteDashboard.FechaLimite">
+<member name="P:appWEB_Distribuidos.Libreria.PendienteDashboard.FechaLimite">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.PendienteDashboard.Estado">
+<member name="P:appWEB_Distribuidos.Libreria.PendienteDashboard.Estado">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.DatoGrafico">
+<member name="T:appWEB_Distribuidos.Libreria.DatoGrafico">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DatoGrafico.Etiqueta">
+<member name="P:appWEB_Distribuidos.Libreria.DatoGrafico.Etiqueta">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DatoGrafico.Cantidad">
+<member name="P:appWEB_Distribuidos.Libreria.DatoGrafico.Cantidad">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.DashboardResumen">
+<member name="T:appWEB_Distribuidos.Libreria.DashboardResumen">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DashboardResumen.TotalPrestamos">
+<member name="P:appWEB_Distribuidos.Libreria.DashboardResumen.TotalPrestamos">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DashboardResumen.Activos">
+<member name="P:appWEB_Distribuidos.Libreria.DashboardResumen.Activos">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DashboardResumen.Vencidos">
+<member name="P:appWEB_Distribuidos.Libreria.DashboardResumen.Vencidos">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DashboardResumen.Devueltos">
+<member name="P:appWEB_Distribuidos.Libreria.DashboardResumen.Devueltos">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DashboardResumen.PorRevisar">
+<member name="P:appWEB_Distribuidos.Libreria.DashboardResumen.PorRevisar">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DashboardResumen.LectoresAtendidos">
+<member name="P:appWEB_Distribuidos.Libreria.DashboardResumen.LectoresAtendidos">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DashboardResumen.LibrosPrestados">
+<member name="P:appWEB_Distribuidos.Libreria.DashboardResumen.LibrosPrestados">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DashboardResumen.EjemplaresDisponibles">
+<member name="P:appWEB_Distribuidos.Libreria.DashboardResumen.EjemplaresDisponibles">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DashboardResumen.DevolucionesHoy">
+<member name="P:appWEB_Distribuidos.Libreria.DashboardResumen.DevolucionesHoy">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DashboardResumen.LectoresActivos">
+<member name="P:appWEB_Distribuidos.Libreria.DashboardResumen.LectoresActivos">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DashboardResumen.LibrosHabilitados">
+<member name="P:appWEB_Distribuidos.Libreria.DashboardResumen.LibrosHabilitados">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DashboardResumen.PorMes">
+<member name="P:appWEB_Distribuidos.Libreria.DashboardResumen.PorMes">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DashboardResumen.PorCategoria">
+<member name="P:appWEB_Distribuidos.Libreria.DashboardResumen.PorCategoria">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DashboardResumen.Pendientes">
+<member name="P:appWEB_Distribuidos.Libreria.DashboardResumen.Pendientes">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.Bitacora">
+<member name="T:appWEB_Distribuidos.Libreria.Bitacora">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Bitacora.IdMan">
+<member name="P:appWEB_Distribuidos.Libreria.Bitacora.IdMan">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Bitacora.FechaMan">
+<member name="P:appWEB_Distribuidos.Libreria.Bitacora.FechaMan">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Bitacora.HoraMan">
+<member name="P:appWEB_Distribuidos.Libreria.Bitacora.HoraMan">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Bitacora.IdUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.Bitacora.IdUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Bitacora.Objeto">
+<member name="P:appWEB_Distribuidos.Libreria.Bitacora.Objeto">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Bitacora.Accion">
+<member name="P:appWEB_Distribuidos.Libreria.Bitacora.Accion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Bitacora.CadenaMan">
+<member name="P:appWEB_Distribuidos.Libreria.Bitacora.CadenaMan">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.RolUsuario">
+<member name="T:appWEB_Distribuidos.Libreria.RolUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.RolUsuario.IdRolUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.RolUsuario.IdRolUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.RolUsuario.NombreRolUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.RolUsuario.NombreRolUsuario">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.AvisoLector">
+<member name="T:appWEB_Distribuidos.Libreria.AvisoLector">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.AvisoLector.Asunto">
+<member name="P:appWEB_Distribuidos.Libreria.AvisoLector.Asunto">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.AvisoLector.Detalle">
+<member name="P:appWEB_Distribuidos.Libreria.AvisoLector.Detalle">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.ComprobanteBiblioteca">
+<member name="T:appWEB_Distribuidos.Libreria.ComprobanteBiblioteca">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ComprobanteBiblioteca.Tipo">
+<member name="P:appWEB_Distribuidos.Libreria.ComprobanteBiblioteca.Tipo">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ComprobanteBiblioteca.Referencia">
+<member name="P:appWEB_Distribuidos.Libreria.ComprobanteBiblioteca.Referencia">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ComprobanteBiblioteca.EmitidoPor">
+<member name="P:appWEB_Distribuidos.Libreria.ComprobanteBiblioteca.EmitidoPor">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ComprobanteBiblioteca.FechaEmision">
+<member name="P:appWEB_Distribuidos.Libreria.ComprobanteBiblioteca.FechaEmision">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ComprobanteBiblioteca.Prestamos">
+<member name="P:appWEB_Distribuidos.Libreria.ComprobanteBiblioteca.Prestamos">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ComprobanteBiblioteca.TotalCargos">
+<member name="P:appWEB_Distribuidos.Libreria.ComprobanteBiblioteca.TotalCargos">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ComprobanteBiblioteca.Penalizaciones">
+<member name="P:appWEB_Distribuidos.Libreria.ComprobanteBiblioteca.Penalizaciones">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.Prestamo">
+<member name="T:appWEB_Distribuidos.Libreria.Prestamo">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.IdPrestamo">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.IdPrestamo">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.FechaInicio">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.FechaInicio">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.FechaFin">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.FechaFin">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.FechaRetorno">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.FechaRetorno">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.EstadoPrestamo">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.EstadoPrestamo">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.DiasRetraso">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.DiasRetraso">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.IdUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.IdUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.IdBibliotecario">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.IdBibliotecario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.IdEjemplar">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.IdEjemplar">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.IdOperacion">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.IdOperacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.CantidadEjemplares">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.CantidadEjemplares">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.Ejemplares">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.Ejemplares">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.IdsPrestamos">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.IdsPrestamos">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.NombreLector">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.NombreLector">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.DniLector">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.DniLector">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.CorreoLector">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.CorreoLector">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.NombreBibliotecario">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.NombreBibliotecario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.IdLibro">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.IdLibro">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.TituloLibro">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.TituloLibro">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Prestamo.EstaActivo">
+<member name="P:appWEB_Distribuidos.Libreria.Prestamo.EstaActivo">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.DetallePenalizacion">
+<member name="T:appWEB_Distribuidos.Libreria.DetallePenalizacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.EstadoPago">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.EstadoPago">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.IdDetallePenalizacion">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.IdDetallePenalizacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.DescripcionDetallePenalizacion">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.DescripcionDetallePenalizacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.IdPenalizacion">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.IdPenalizacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.IdPrestamo">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.IdPrestamo">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.TipoPenalizacion">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.TipoPenalizacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.DescripcionTipoPenalizacion">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.DescripcionTipoPenalizacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.MontoPenalizacion">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.MontoPenalizacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.NombreUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.NombreUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.TituloLibro">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.TituloLibro">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.FechaInicio">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.FechaInicio">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.FechaFin">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.FechaFin">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.FechaRetorno">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.FechaRetorno">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.DiasRetraso">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.DiasRetraso">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetallePenalizacion.EstadoPrestamo">
+<member name="P:appWEB_Distribuidos.Libreria.DetallePenalizacion.EstadoPrestamo">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.EjemplarEntregaSoap">
+<member name="T:appWEB_Distribuidos.Libreria.EjemplarEntregaSoap">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.EjemplarEntregaSoap.IdLibro">
+<member name="P:appWEB_Distribuidos.Libreria.EjemplarEntregaSoap.IdLibro">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.EjemplarEntregaSoap.IdEjemplar">
+<member name="P:appWEB_Distribuidos.Libreria.EjemplarEntregaSoap.IdEjemplar">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.DevolucionCalculada">
+<member name="T:appWEB_Distribuidos.Libreria.DevolucionCalculada">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DevolucionCalculada.IdPrestamo">
+<member name="P:appWEB_Distribuidos.Libreria.DevolucionCalculada.IdPrestamo">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DevolucionCalculada.CantidadEjemplares">
+<member name="P:appWEB_Distribuidos.Libreria.DevolucionCalculada.CantidadEjemplares">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DevolucionCalculada.FechaRetorno">
+<member name="P:appWEB_Distribuidos.Libreria.DevolucionCalculada.FechaRetorno">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DevolucionCalculada.DiasRetraso">
+<member name="P:appWEB_Distribuidos.Libreria.DevolucionCalculada.DiasRetraso">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DevolucionCalculada.IdPenalizacion">
+<member name="P:appWEB_Distribuidos.Libreria.DevolucionCalculada.IdPenalizacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DevolucionCalculada.Monto">
+<member name="P:appWEB_Distribuidos.Libreria.DevolucionCalculada.Monto">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DevolucionCalculada.Motivo">
+<member name="P:appWEB_Distribuidos.Libreria.DevolucionCalculada.Motivo">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DevolucionCalculada.YaRegistrada">
+<member name="P:appWEB_Distribuidos.Libreria.DevolucionCalculada.YaRegistrada">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DevolucionCalculada.RegistrarCargo">
+<member name="P:appWEB_Distribuidos.Libreria.DevolucionCalculada.RegistrarCargo">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.EstadoCirculacionLector">
+<member name="T:appWEB_Distribuidos.Libreria.EstadoCirculacionLector">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.EstadoCirculacionLector.LibrosPendientes">
+<member name="P:appWEB_Distribuidos.Libreria.EstadoCirculacionLector.LibrosPendientes">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.EstadoCirculacionLector.CupoDisponible">
+<member name="P:appWEB_Distribuidos.Libreria.EstadoCirculacionLector.CupoDisponible">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.EstadoCirculacionLector.TieneSolicitudVigente">
+<member name="P:appWEB_Distribuidos.Libreria.EstadoCirculacionLector.TieneSolicitudVigente">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.EstadoCirculacionLector.TienePagosPorRegularizar">
+<member name="P:appWEB_Distribuidos.Libreria.EstadoCirculacionLector.TienePagosPorRegularizar">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.ResumenPenalizaciones">
+<member name="T:appWEB_Distribuidos.Libreria.ResumenPenalizaciones">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ResumenPenalizaciones.Detalles">
+<member name="P:appWEB_Distribuidos.Libreria.ResumenPenalizaciones.Detalles">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ResumenPenalizaciones.Total">
+<member name="P:appWEB_Distribuidos.Libreria.ResumenPenalizaciones.Total">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ResumenPenalizaciones.Pendiente">
+<member name="P:appWEB_Distribuidos.Libreria.ResumenPenalizaciones.Pendiente">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ResumenPenalizaciones.PorRevisar">
+<member name="P:appWEB_Distribuidos.Libreria.ResumenPenalizaciones.PorRevisar">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ResumenPenalizaciones.Pagado">
+<member name="P:appWEB_Distribuidos.Libreria.ResumenPenalizaciones.Pagado">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ResumenPenalizaciones.BloqueaPrestamos">
+<member name="P:appWEB_Distribuidos.Libreria.ResumenPenalizaciones.BloqueaPrestamos">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.ResumenPenalizaciones.TotalPorRegularizar">
+<member name="P:appWEB_Distribuidos.Libreria.ResumenPenalizaciones.TotalPorRegularizar">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.DetalleSolicitudPrestamo">
+<member name="T:appWEB_Distribuidos.Libreria.DetalleSolicitudPrestamo">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetalleSolicitudPrestamo.IdDetalle">
+<member name="P:appWEB_Distribuidos.Libreria.DetalleSolicitudPrestamo.IdDetalle">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetalleSolicitudPrestamo.IdSolicitud">
+<member name="P:appWEB_Distribuidos.Libreria.DetalleSolicitudPrestamo.IdSolicitud">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetalleSolicitudPrestamo.IdLibro">
+<member name="P:appWEB_Distribuidos.Libreria.DetalleSolicitudPrestamo.IdLibro">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetalleSolicitudPrestamo.TituloLibro">
+<member name="P:appWEB_Distribuidos.Libreria.DetalleSolicitudPrestamo.TituloLibro">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.DetalleSolicitudPrestamo.IdPrestamo">
+<member name="P:appWEB_Distribuidos.Libreria.DetalleSolicitudPrestamo.IdPrestamo">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.SolicitudPrestamo">
+<member name="T:appWEB_Distribuidos.Libreria.SolicitudPrestamo">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.SolicitudPrestamo.IdSolicitud">
+<member name="P:appWEB_Distribuidos.Libreria.SolicitudPrestamo.IdSolicitud">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.SolicitudPrestamo.IdUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.SolicitudPrestamo.IdUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.SolicitudPrestamo.NombreLector">
+<member name="P:appWEB_Distribuidos.Libreria.SolicitudPrestamo.NombreLector">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.SolicitudPrestamo.DniLector">
+<member name="P:appWEB_Distribuidos.Libreria.SolicitudPrestamo.DniLector">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.SolicitudPrestamo.FechaSolicitud">
+<member name="P:appWEB_Distribuidos.Libreria.SolicitudPrestamo.FechaSolicitud">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.SolicitudPrestamo.FechaLimiteRetiro">
+<member name="P:appWEB_Distribuidos.Libreria.SolicitudPrestamo.FechaLimiteRetiro">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.SolicitudPrestamo.EstadoSolicitud">
+<member name="P:appWEB_Distribuidos.Libreria.SolicitudPrestamo.EstadoSolicitud">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.SolicitudPrestamo.EstadoActual">
+<member name="P:appWEB_Distribuidos.Libreria.SolicitudPrestamo.EstadoActual">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.SolicitudPrestamo.FechaCierre">
+<member name="P:appWEB_Distribuidos.Libreria.SolicitudPrestamo.FechaCierre">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.SolicitudPrestamo.FechaAprobacion">
+<member name="P:appWEB_Distribuidos.Libreria.SolicitudPrestamo.FechaAprobacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.SolicitudPrestamo.IdAprobador">
+<member name="P:appWEB_Distribuidos.Libreria.SolicitudPrestamo.IdAprobador">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.SolicitudPrestamo.NombreAprobador">
+<member name="P:appWEB_Distribuidos.Libreria.SolicitudPrestamo.NombreAprobador">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.SolicitudPrestamo.Detalles">
+<member name="P:appWEB_Distribuidos.Libreria.SolicitudPrestamo.Detalles">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.SolicitudPrestamo.EstaVigente">
+<member name="P:appWEB_Distribuidos.Libreria.SolicitudPrestamo.EstaVigente">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.BibliotecaLectorSoap">
+<member name="T:appWEB_Distribuidos.Libreria.BibliotecaLectorSoap">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.BibliotecaLectorSoap.Catalogo">
+<member name="P:appWEB_Distribuidos.Libreria.BibliotecaLectorSoap.Catalogo">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.BibliotecaLectorSoap.Reservas">
+<member name="P:appWEB_Distribuidos.Libreria.BibliotecaLectorSoap.Reservas">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.BibliotecaLectorSoap.Prestamos">
+<member name="P:appWEB_Distribuidos.Libreria.BibliotecaLectorSoap.Prestamos">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.BibliotecaLectorSoap.Cargos">
+<member name="P:appWEB_Distribuidos.Libreria.BibliotecaLectorSoap.Cargos">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.BibliotecaLectorSoap.Circulacion">
+<member name="P:appWEB_Distribuidos.Libreria.BibliotecaLectorSoap.Circulacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.BibliotecaLectorSoap.PuedeSolicitar">
+<member name="P:appWEB_Distribuidos.Libreria.BibliotecaLectorSoap.PuedeSolicitar">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.BibliotecaLectorSoap.LibrosAgregables">
+<member name="P:appWEB_Distribuidos.Libreria.BibliotecaLectorSoap.LibrosAgregables">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.Libro">
+<member name="T:appWEB_Distribuidos.Libreria.Libro">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Libro.IdLibro">
+<member name="P:appWEB_Distribuidos.Libreria.Libro.IdLibro">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Libro.TituloLibro">
+<member name="P:appWEB_Distribuidos.Libreria.Libro.TituloLibro">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Libro.EditorialLibro">
+<member name="P:appWEB_Distribuidos.Libreria.Libro.EditorialLibro">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Libro.AnoPublicacion">
+<member name="P:appWEB_Distribuidos.Libreria.Libro.AnoPublicacion">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Libro.StockTotal">
+<member name="P:appWEB_Distribuidos.Libreria.Libro.StockTotal">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Libro.Disponibles">
+<member name="P:appWEB_Distribuidos.Libreria.Libro.Disponibles">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Libro.EstadoLibro">
+<member name="P:appWEB_Distribuidos.Libreria.Libro.EstadoLibro">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Libro.PublicoLibro">
+<member name="P:appWEB_Distribuidos.Libreria.Libro.PublicoLibro">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Libro.Autor">
+<member name="P:appWEB_Distribuidos.Libreria.Libro.Autor">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Libro.Categoria">
+<member name="P:appWEB_Distribuidos.Libreria.Libro.Categoria">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Libro.NombreAutor">
+<member name="P:appWEB_Distribuidos.Libreria.Libro.NombreAutor">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Libro.NombreCategoria">
+<member name="P:appWEB_Distribuidos.Libreria.Libro.NombreCategoria">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.Ejemplar">
+<member name="T:appWEB_Distribuidos.Libreria.Ejemplar">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Ejemplar.IdEjemplar">
+<member name="P:appWEB_Distribuidos.Libreria.Ejemplar.IdEjemplar">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Ejemplar.EstadoEjemplar">
+<member name="P:appWEB_Distribuidos.Libreria.Ejemplar.EstadoEjemplar">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Ejemplar.IdLibro">
+<member name="P:appWEB_Distribuidos.Libreria.Ejemplar.IdLibro">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.Autor">
+<member name="T:appWEB_Distribuidos.Libreria.Autor">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Autor.IdAutor">
+<member name="P:appWEB_Distribuidos.Libreria.Autor.IdAutor">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Autor.NombreAutor">
+<member name="P:appWEB_Distribuidos.Libreria.Autor.NombreAutor">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Autor.NacionalidadAutor">
+<member name="P:appWEB_Distribuidos.Libreria.Autor.NacionalidadAutor">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Autor.FechaNacimientoAutor">
+<member name="P:appWEB_Distribuidos.Libreria.Autor.FechaNacimientoAutor">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Autor.FechaFallecimientoAutor">
+<member name="P:appWEB_Distribuidos.Libreria.Autor.FechaFallecimientoAutor">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Autor.BiografiaAutor">
+<member name="P:appWEB_Distribuidos.Libreria.Autor.BiografiaAutor">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.Usuario">
+<member name="T:appWEB_Distribuidos.Libreria.Usuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Usuario.IdUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.Usuario.IdUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Usuario.EmailUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.Usuario.EmailUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Usuario.NombreUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.Usuario.NombreUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Usuario.ApPaterno">
+<member name="P:appWEB_Distribuidos.Libreria.Usuario.ApPaterno">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Usuario.ApMaterno">
+<member name="P:appWEB_Distribuidos.Libreria.Usuario.ApMaterno">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Usuario.NumeroDniUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.Usuario.NumeroDniUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Usuario.FechaNacimientoUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.Usuario.FechaNacimientoUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Usuario.GeneroUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.Usuario.GeneroUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Usuario.EstadoUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.Usuario.EstadoUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Usuario.Contrasena">
+<member name="P:appWEB_Distribuidos.Libreria.Usuario.Contrasena">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Usuario.IdRolUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.Usuario.IdRolUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Usuario.PreguntaSegura">
+<member name="P:appWEB_Distribuidos.Libreria.Usuario.PreguntaSegura">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Usuario.RptaSegura">
+<member name="P:appWEB_Distribuidos.Libreria.Usuario.RptaSegura">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.Usuario.NombreRol">
+<member name="P:appWEB_Distribuidos.Libreria.Usuario.NombreRol">
 <remarks/>
 </member>
-<member name="T:appWEB_Distribuidos.Librerias.UsuarioSoap">
+<member name="T:appWEB_Distribuidos.Libreria.UsuarioSoap">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.UsuarioSoap.IdUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.UsuarioSoap.IdUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.UsuarioSoap.NombreUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.UsuarioSoap.NombreUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.UsuarioSoap.ApPaterno">
+<member name="P:appWEB_Distribuidos.Libreria.UsuarioSoap.ApPaterno">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.UsuarioSoap.ApMaterno">
+<member name="P:appWEB_Distribuidos.Libreria.UsuarioSoap.ApMaterno">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.UsuarioSoap.NombreCompleto">
+<member name="P:appWEB_Distribuidos.Libreria.UsuarioSoap.NombreCompleto">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.UsuarioSoap.EmailUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.UsuarioSoap.EmailUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.UsuarioSoap.NumeroDniUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.UsuarioSoap.NumeroDniUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.UsuarioSoap.FechaNacimientoUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.UsuarioSoap.FechaNacimientoUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.UsuarioSoap.GeneroUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.UsuarioSoap.GeneroUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.UsuarioSoap.EstadoUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.UsuarioSoap.EstadoUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.UsuarioSoap.IdRolUsuario">
+<member name="P:appWEB_Distribuidos.Libreria.UsuarioSoap.IdRolUsuario">
 <remarks/>
 </member>
-<member name="P:appWEB_Distribuidos.Librerias.UsuarioSoap.NombreRol">
+<member name="P:appWEB_Distribuidos.Libreria.UsuarioSoap.NombreRol">
 <remarks/>
 </member>
 </members>

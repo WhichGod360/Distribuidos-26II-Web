@@ -1,5 +1,4 @@
-﻿Imports appWEB_Distribuidos.Librerias
-Imports System.Data
+﻿Imports System.Data
 Imports System.Linq
 
 Public Class Libros
@@ -14,7 +13,7 @@ Public Class Libros
     End Sub
 
     Private Sub Listar()
-        Dim datos = Servicio.ListarLibros().Where(Function(a) Coincide(a.TituloLibro & " " & a.Autor & " " & a.Categoria, txtBuscar.Text)).ToList()
+        Dim datos = WS.ListarLibros().Where(Function(a) Coincide(a.TituloLibro & " " & a.Autor & " " & a.Categoria, txtBuscar.Text)).ToList()
         grvDatos.DataSource = datos
         grvDatos.DataBind()
     End Sub
@@ -48,7 +47,7 @@ Public Class Libros
         pnlEditor.Visible = False
         pnlConfirmar.Visible = False
         CargarOpciones()
-        Dim a = Servicio.ListarLibros().FirstOrDefault(Function(l) l.IdLibro = id)
+        Dim a = WS.ListarLibros().FirstOrDefault(Function(l) l.IdLibro = id)
         If a Is Nothing Then Throw New InvalidOperationException("El libro ya no existe.")
         txtTitulo.Text = a.TituloLibro
         txtEditorial.Text = a.EditorialLibro
@@ -110,9 +109,9 @@ Public Class Libros
             Dim autores = lstAutores.Items.Cast(Of ListItem)().Where(Function(i) i.Selected).Select(Function(i) Integer.Parse(i.Value)).ToList()
             Dim categorias = lstCategorias.Items.Cast(Of ListItem)().Where(Function(i) i.Selected).Select(Function(i) Integer.Parse(i.Value)).ToList()
             If RegistroId = 0 Then
-                Comprobar(Servicio.AgregarLibro(txtTitulo.Text, txtEditorial.Text, anio, ddlPublico.SelectedValue, chkActivo.Checked, autores.ToArray(), categorias.ToArray(), Entero(txtCantidad.Text, 0, 500)))
+                Comprobar(WS.AgregarLibro(txtTitulo.Text, txtEditorial.Text, anio, ddlPublico.SelectedValue, chkActivo.Checked, autores.ToArray(), categorias.ToArray(), Entero(txtCantidad.Text, 0, 500)))
             Else
-                Comprobar(Servicio.ActualizarLibro(RegistroId, txtTitulo.Text, txtEditorial.Text, anio, ddlPublico.SelectedValue, chkActivo.Checked, autores.ToArray(), categorias.ToArray()))
+                Comprobar(WS.ActualizarLibro(RegistroId, txtTitulo.Text, txtEditorial.Text, anio, ddlPublico.SelectedValue, chkActivo.Checked, autores.ToArray(), categorias.ToArray()))
             End If
             Guardado()
         End Sub)
@@ -135,17 +134,17 @@ Public Class Libros
     Protected Sub btnConfirmar_Click(sender As Object, e As EventArgs) Handles btnConfirmar.Click
         Ejecutar(lblMensaje, Sub()
             If EliminarId <= 0 Then Throw New InvalidOperationException("Confirma un registro antes de continuar.")
-            Comprobar(Servicio.DesactivarLibro(EliminarId))
+            Comprobar(WS.DesactivarLibro(EliminarId))
             Guardado()
         End Sub)
     End Sub
     Private Sub CargarOpciones()
         lstAutores.Items.Clear()
-        For Each autor In Servicio.ListarAutores()
+        For Each autor In WS.ListarAutores()
             lstAutores.Items.Add(New ListItem(autor.NombreAutor, autor.IdAutor.ToString()))
         Next
         lstCategorias.Items.Clear()
-        For Each fila As DataRow In Servicio.ListarCategorias("Todos").Rows
+        For Each fila As DataRow In WS.ListarCategorias("Todos").Rows
             lstCategorias.Items.Add(New ListItem(CStr(fila("nombre_categoria")), CStr(fila("id_categoria"))))
         Next
     End Sub
