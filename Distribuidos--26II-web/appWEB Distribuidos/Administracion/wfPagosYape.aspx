@@ -1,18 +1,32 @@
 <%@ Page Title="Revisar pagos por Yape · Lecturae" Language="VB" AutoEventWireup="false" MasterPageFile="~/pagWeb.Master" CodeBehind="wfPagosYape.aspx.vb" Inherits="appWEB_Distribuidos.RevisionYapeWeb" %>
+
 <asp:Content ID="Contenido" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:HyperLink runat="server" NavigateUrl="~/Administracion/wfDetallePenalizaciones.aspx" Text="Volver a Cargos y pagos" />
     <h1>Revisar pagos por Yape</h1>
     <asp:Label ID="lblMensaje" runat="server" Visible="false" role="alert" />
     <asp:Panel ID="pnlBandeja" runat="server" Visible="false">
         <asp:Panel ID="pnlDetalle" runat="server" Visible="false" CssClass="editor-panel">
-            <h2><asp:Literal ID="litTitulo" runat="server" Mode="Encode" /></h2>
+            <h2>
+                <asp:Literal ID="litTitulo" runat="server" Mode="Encode" /></h2>
             <dl class="yape-datos">
-                <dt>Lector</dt><dd><asp:Literal ID="litLector" runat="server" Mode="Encode" /></dd>
-                <dt>Importe</dt><dd><asp:Literal ID="litMonto" runat="server" Mode="Encode" /></dd>
-                <dt>Nombre en Yape</dt><dd><asp:Literal ID="litNombre" runat="server" Mode="Encode" /></dd>
-                <dt>Celular</dt><dd><asp:Literal ID="litCelular" runat="server" Mode="Encode" /></dd>
-                <dt>Código de seguridad</dt><dd><asp:Literal ID="litCodigo" runat="server" Mode="Encode" /></dd>
-                <dt>Estado</dt><dd><asp:Literal ID="litEstado" runat="server" Mode="Encode" /></dd>
+                <dt>Lector</dt>
+                <dd>
+                    <asp:Literal ID="litLector" runat="server" Mode="Encode" /></dd>
+                <dt>Importe</dt>
+                <dd>
+                    <asp:Literal ID="litMonto" runat="server" Mode="Encode" /></dd>
+                <dt>Nombre en Yape</dt>
+                <dd>
+                    <asp:Literal ID="litNombre" runat="server" Mode="Encode" /></dd>
+                <dt>Celular</dt>
+                <dd>
+                    <asp:Literal ID="litCelular" runat="server" Mode="Encode" /></dd>
+                <dt>Código de seguridad</dt>
+                <dd>
+                    <asp:Literal ID="litCodigo" runat="server" Mode="Encode" /></dd>
+                <dt>Estado</dt>
+                <dd>
+                    <asp:Literal ID="litEstado" runat="server" Mode="Encode" /></dd>
             </dl>
             <asp:Panel ID="pnlDecision" runat="server" Visible="false" CssClass="yape-fields">
                 <p class="field-help">Comprueba el ingreso en los movimientos de Yape de la cuenta receptora. Coteja el nombre, importe y código, y verifica que el movimiento no se haya usado en otro cargo.</p>

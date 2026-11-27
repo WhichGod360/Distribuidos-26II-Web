@@ -1,40 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|c:\\users\\danix\\onedrive\\desktop\\temrinando distribuidos\\distribuidos--26ii-web\\appweb distribuidos\\catalogo\\wfautores.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|solutionrelative:appweb distribuidos\\catalogo\\wfautores.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|c:\\users\\danix\\onedrive\\desktop\\temrinando distribuidos\\distribuidos--26ii-web\\appweb distribuidos\\catalogo\\wfautores.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|solutionrelative:appweb distribuidos\\catalogo\\wfautores.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|c:\\users\\danix\\onedrive\\desktop\\temrinando distribuidos\\distribuidos--26ii-web\\appweb distribuidos\\administracion\\wfusuarios.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|solutionrelative:appweb distribuidos\\administracion\\wfusuarios.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|c:\\users\\danix\\onedrive\\desktop\\temrinando distribuidos\\distribuidos--26ii-web\\appweb distribuidos\\administracion\\wfusuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|solutionrelative:appweb distribuidos\\administracion\\wfusuarios.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|c:\\users\\danix\\onedrive\\desktop\\temrinando distribuidos\\distribuidos--26ii-web\\appweb distribuidos\\catalogo\\wfejemplares.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|solutionrelative:appweb distribuidos\\catalogo\\wfejemplares.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|c:\\users\\danix\\onedrive\\desktop\\temrinando distribuidos\\distribuidos--26ii-web\\appweb distribuidos\\catalogo\\wfejemplares.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|solutionrelative:appweb distribuidos\\catalogo\\wfejemplares.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|c:\\users\\danix\\onedrive\\desktop\\temrinando distribuidos\\distribuidos--26ii-web\\appweb distribuidos\\catalogo\\wflibros.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|solutionrelative:appweb distribuidos\\catalogo\\wflibros.aspx.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|c:\\users\\danix\\onedrive\\desktop\\temrinando distribuidos\\distribuidos--26ii-web\\appweb distribuidos\\catalogo\\wflibros.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{1568078E-3161-4A1F-AD26-793853E46C08}|appWEB Distribuidos\\appWEB Distribuidos.vbproj|solutionrelative:appweb distribuidos\\catalogo\\wflibros.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -42,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -55,110 +22,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "wfAutores.aspx.vb",
-              "DocumentMoniker": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Catalogo\\wfAutores.aspx.vb",
-              "RelativeDocumentMoniker": "appWEB Distribuidos\\Catalogo\\wfAutores.aspx.vb",
-              "ToolTip": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Catalogo\\wfAutores.aspx.vb",
-              "RelativeToolTip": "appWEB Distribuidos\\Catalogo\\wfAutores.aspx.vb",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAUwGUAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-11-24T12:10:45.242Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "wfAutores.aspx",
-              "DocumentMoniker": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Catalogo\\wfAutores.aspx",
-              "RelativeDocumentMoniker": "appWEB Distribuidos\\Catalogo\\wfAutores.aspx",
-              "ToolTip": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Catalogo\\wfAutores.aspx",
-              "RelativeToolTip": "appWEB Distribuidos\\Catalogo\\wfAutores.aspx",
-              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-11-24T12:10:42.17Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "wfUsuarios.aspx.vb",
-              "DocumentMoniker": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Administracion\\wfUsuarios.aspx.vb",
-              "RelativeDocumentMoniker": "appWEB Distribuidos\\Administracion\\wfUsuarios.aspx.vb",
-              "ToolTip": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Administracion\\wfUsuarios.aspx.vb",
-              "RelativeToolTip": "appWEB Distribuidos\\Administracion\\wfUsuarios.aspx.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-11-24T12:10:07.05Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "wfUsuarios.aspx",
-              "DocumentMoniker": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Administracion\\wfUsuarios.aspx",
-              "RelativeDocumentMoniker": "appWEB Distribuidos\\Administracion\\wfUsuarios.aspx",
-              "ToolTip": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Administracion\\wfUsuarios.aspx",
-              "RelativeToolTip": "appWEB Distribuidos\\Administracion\\wfUsuarios.aspx",
-              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-11-24T12:10:03.604Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "wfEjemplares.aspx.vb",
-              "DocumentMoniker": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Catalogo\\wfEjemplares.aspx.vb",
-              "RelativeDocumentMoniker": "appWEB Distribuidos\\Catalogo\\wfEjemplares.aspx.vb",
-              "ToolTip": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Catalogo\\wfEjemplares.aspx.vb",
-              "RelativeToolTip": "appWEB Distribuidos\\Catalogo\\wfEjemplares.aspx.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-11-24T12:09:28.201Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "wfEjemplares.aspx",
-              "DocumentMoniker": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Catalogo\\wfEjemplares.aspx",
-              "RelativeDocumentMoniker": "appWEB Distribuidos\\Catalogo\\wfEjemplares.aspx",
-              "ToolTip": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Catalogo\\wfEjemplares.aspx",
-              "RelativeToolTip": "appWEB Distribuidos\\Catalogo\\wfEjemplares.aspx",
-              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-11-24T12:09:23.801Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "wfLibros.aspx.vb",
-              "DocumentMoniker": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Catalogo\\wfLibros.aspx.vb",
-              "RelativeDocumentMoniker": "appWEB Distribuidos\\Catalogo\\wfLibros.aspx.vb",
-              "ToolTip": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Catalogo\\wfLibros.aspx.vb",
-              "RelativeToolTip": "appWEB Distribuidos\\Catalogo\\wfLibros.aspx.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-11-24T12:08:47.081Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "wfLibros.aspx",
-              "DocumentMoniker": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Catalogo\\wfLibros.aspx",
-              "RelativeDocumentMoniker": "appWEB Distribuidos\\Catalogo\\wfLibros.aspx",
-              "ToolTip": "C:\\Users\\danix\\OneDrive\\Desktop\\Temrinando Distribuidos\\Distribuidos--26II-web\\appWEB Distribuidos\\Catalogo\\wfLibros.aspx",
-              "RelativeToolTip": "appWEB Distribuidos\\Catalogo\\wfLibros.aspx",
-              "LogicalView": "7651a702-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2026-11-24T12:08:42.785Z",
-              "EditorCaption": ""
             }
           ]
         }

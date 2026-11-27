@@ -1,16 +1,114 @@
 <%@ Page Title="Préstamos · Lecturae" Language="VB" AutoEventWireup="false" MasterPageFile="~/pagWeb.Master" CodeBehind="wfPrestamos.aspx.vb" Inherits="appWEB_Distribuidos.PrestamosWeb" %>
+
 <asp:Content ID="Cabecera" ContentPlaceHolderID="head" runat="server" />
 <asp:Content ID="Contenido" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<h1>Préstamos</h1><p class="page-description">Entrega de ejemplares, seguimiento y devolución.</p><asp:Label ID="lblMensaje" runat="server" Visible="false" role="alert" />
-<asp:Panel runat="server" DefaultButton="btnBuscar"><table class="toolbar-table" role="presentation"><tr><td><asp:Label ID="lblBuscar" runat="server" AssociatedControlID="txtBuscar" Text="Lector, DNI, libro o préstamo" /><asp:TextBox ID="txtBuscar" runat="server" CssClass="input-field" MaxLength="150" /></td><td><asp:Label ID="lblFiltro" runat="server" AssociatedControlID="ddlEstado" Text="Estado" /><asp:DropDownList ID="ddlEstado" runat="server" CssClass="input-field"><asp:ListItem>Todos</asp:ListItem><asp:ListItem>Activos</asp:ListItem><asp:ListItem>Vencidos</asp:ListItem><asp:ListItem>Devueltos</asp:ListItem></asp:DropDownList></td><td><asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="button" /></td><td><asp:Button ID="btnNuevo" runat="server" Text="Nuevo préstamo" CssClass="button primary" /></td></tr></table></asp:Panel>
-<asp:Panel ID="pnlNuevo" runat="server" DefaultButton="btnBuscarLector" Visible="false" CssClass="editor-panel"><h2>Registrar préstamo</h2><p class="field-help">Cinco días desde la entrega presencial. El operador es el usuario de la sesión.</p><table class="editor-table" role="presentation">
-<tr><td class="field-label"><asp:Label ID="lblCriterio" runat="server" AssociatedControlID="txtLector" Text="Buscar lector" /></td><td><asp:TextBox ID="txtLector" runat="server" CssClass="input-field" MaxLength="150" /><asp:Button ID="btnBuscarLector" runat="server" Text="Buscar lector" CssClass="button" /></td></tr>
-<tr><td class="field-label"><asp:Label ID="lblLector" runat="server" AssociatedControlID="ddlLector" Text="Lector" /></td><td><asp:DropDownList ID="ddlLector" runat="server" CssClass="input-field" AutoPostBack="true" /></td></tr>
-<tr><td class="field-label"><asp:Label ID="lblLibro" runat="server" AssociatedControlID="ddlLibro" Text="Libro disponible" /></td><td><asp:DropDownList ID="ddlLibro" runat="server" CssClass="input-field" AutoPostBack="true" /></td></tr>
-<tr><td class="field-label"><asp:Label ID="lblEjemplar" runat="server" AssociatedControlID="ddlEjemplar" Text="Ejemplar" /></td><td><asp:DropDownList ID="ddlEjemplar" runat="server" CssClass="input-field" /></td></tr>
-<tr><td class="field-label"><asp:Label ID="lblSeleccion" runat="server" AssociatedControlID="lstSeleccion" Text="Ejemplares del préstamo" /></td><td><asp:ListBox ID="lstSeleccion" runat="server" CssClass="input-field" Rows="5" /><asp:Button ID="btnAgregar" runat="server" Text="Agregar ejemplar" CssClass="button" /> <asp:Button ID="btnQuitar" runat="server" Text="Quitar seleccionado" CssClass="button" /></td></tr>
-<tr><td colspan="2"><asp:Literal ID="litPlazo" runat="server" Mode="Encode" /></td></tr><tr><td colspan="2" class="form-actions"><asp:Button ID="btnGuardar" runat="server" Text="Registrar entrega" CssClass="button primary" /><asp:Button ID="btnCancelarNuevo" runat="server" Text="Cancelar" CssClass="button" /></td></tr></table></asp:Panel>
-<asp:Panel ID="pnlDetalle" runat="server" Visible="false" CssClass="editor-panel"><h2><asp:Literal ID="litDetalle" runat="server" Mode="Encode" /></h2><p class="field-help"><asp:Literal ID="litDatos" runat="server" Mode="Encode" /></p><asp:HyperLink ID="lnkComprobante" runat="server" Text="Ver comprobante de préstamo" CssClass="button link-button" /> <asp:HyperLink ID="lnkDevolucion" runat="server" Text="Ver comprobante de devolución" CssClass="button link-button" Visible="false" />
-<asp:Panel ID="pnlDevolver" runat="server" DefaultButton="btnCalcular"><table class="editor-table" role="presentation"><tr><td class="field-label"><asp:Label ID="lblRetorno" runat="server" AssociatedControlID="txtRetorno" Text="Fecha de devolución" /></td><td><asp:TextBox ID="txtRetorno" runat="server" TextMode="Date" CssClass="input-field" /></td></tr><tr><td colspan="2"><asp:Button ID="btnCalcular" runat="server" Text="Calcular devolución" CssClass="button" /></td></tr></table><asp:Panel ID="pnlConfirmar" runat="server" Visible="false" CssClass="confirm-panel"><p><asp:Literal ID="litCalculo" runat="server" Mode="Encode" /></p><asp:Button ID="btnDevolver" runat="server" Text="Confirmar devolución" CssClass="button primary" /></asp:Panel></asp:Panel><asp:Button ID="btnCerrar" runat="server" Text="Cerrar detalle" CssClass="button" /></asp:Panel>
-<div class="table-scroll"><asp:GridView ID="grvDatos" runat="server" AutoGenerateColumns="false" DataKeyNames="IdPrestamo" CssClass="data-table" GridLines="None" AllowPaging="true" PageSize="15" EmptyDataText="No se encontraron préstamos." ShowHeaderWhenEmpty="true"><Columns><asp:ButtonField CommandName="Select" Text="Detalle / devolución" /><asp:BoundField DataField="IdPrestamo" HeaderText="N.º" /><asp:BoundField DataField="NombreLector" HeaderText="Lector" /><asp:BoundField DataField="TituloLibro" HeaderText="Libros" /><asp:BoundField DataField="Ejemplares" HeaderText="Ejemplares" /><asp:BoundField DataField="FechaFin" HeaderText="Límite" DataFormatString="{0:dd/MM/yyyy}" /><asp:BoundField DataField="FechaRetorno" HeaderText="Devolución" DataFormatString="{0:dd/MM/yyyy}" /><asp:BoundField DataField="Estado" HeaderText="Estado" /></Columns><PagerStyle CssClass="grid-pager" /></asp:GridView></div>
+    <h1>Préstamos</h1>
+    <p class="page-description">Entrega de ejemplares, seguimiento y devolución.</p>
+    <asp:Label ID="lblMensaje" runat="server" Visible="false" role="alert" />
+    <asp:Panel runat="server" DefaultButton="btnBuscar">
+        <table class="toolbar-table" role="presentation">
+            <tr>
+                <td>
+                    <asp:Label ID="lblBuscar" runat="server" AssociatedControlID="txtBuscar" Text="Lector, DNI, libro o préstamo" /><asp:TextBox ID="txtBuscar" runat="server" CssClass="input-field" MaxLength="150" /></td>
+                <td>
+                    <asp:Label ID="lblFiltro" runat="server" AssociatedControlID="ddlEstado" Text="Estado" /><asp:DropDownList ID="ddlEstado" runat="server" CssClass="input-field">
+                        <asp:ListItem>Todos</asp:ListItem>
+                        <asp:ListItem>Activos</asp:ListItem>
+                        <asp:ListItem>Vencidos</asp:ListItem>
+                        <asp:ListItem>Devueltos</asp:ListItem>
+                    </asp:DropDownList></td>
+                <td>
+                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="button" /></td>
+                <td>
+                    <asp:Button ID="btnNuevo" runat="server" Text="Nuevo préstamo" CssClass="button primary" /></td>
+            </tr>
+        </table>
+    </asp:Panel>
+    <asp:Panel ID="pnlNuevo" runat="server" DefaultButton="btnBuscarLector" Visible="false" CssClass="editor-panel">
+        <h2>Registrar préstamo</h2>
+        <p class="field-help">Cinco días desde la entrega presencial. El operador es el usuario de la sesión.</p>
+        <table class="editor-table" role="presentation">
+            <tr>
+                <td class="field-label">
+                    <asp:Label ID="lblCriterio" runat="server" AssociatedControlID="txtLector" Text="Buscar lector" /></td>
+                <td>
+                    <asp:TextBox ID="txtLector" runat="server" CssClass="input-field" MaxLength="150" /><asp:Button ID="btnBuscarLector" runat="server" Text="Buscar lector" CssClass="button" /></td>
+            </tr>
+            <tr>
+                <td class="field-label">
+                    <asp:Label ID="lblLector" runat="server" AssociatedControlID="ddlLector" Text="Lector" /></td>
+                <td>
+                    <asp:DropDownList ID="ddlLector" runat="server" CssClass="input-field" AutoPostBack="true" /></td>
+            </tr>
+            <tr>
+                <td class="field-label">
+                    <asp:Label ID="lblLibro" runat="server" AssociatedControlID="ddlLibro" Text="Libro disponible" /></td>
+                <td>
+                    <asp:DropDownList ID="ddlLibro" runat="server" CssClass="input-field" AutoPostBack="true" /></td>
+            </tr>
+            <tr>
+                <td class="field-label">
+                    <asp:Label ID="lblEjemplar" runat="server" AssociatedControlID="ddlEjemplar" Text="Ejemplar" /></td>
+                <td>
+                    <asp:DropDownList ID="ddlEjemplar" runat="server" CssClass="input-field" /></td>
+            </tr>
+            <tr>
+                <td class="field-label">
+                    <asp:Label ID="lblSeleccion" runat="server" AssociatedControlID="lstSeleccion" Text="Ejemplares del préstamo" /></td>
+                <td>
+                    <asp:ListBox ID="lstSeleccion" runat="server" CssClass="input-field" Rows="5" /><asp:Button ID="btnAgregar" runat="server" Text="Agregar ejemplar" CssClass="button" />
+                    <asp:Button ID="btnQuitar" runat="server" Text="Quitar seleccionado" CssClass="button" /></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <asp:Literal ID="litPlazo" runat="server" Mode="Encode" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="form-actions">
+                    <asp:Button ID="btnGuardar" runat="server" Text="Registrar entrega" CssClass="button primary" /><asp:Button ID="btnCancelarNuevo" runat="server" Text="Cancelar" CssClass="button" /></td>
+            </tr>
+        </table>
+    </asp:Panel>
+    <asp:Panel ID="pnlDetalle" runat="server" Visible="false" CssClass="editor-panel">
+        <h2>
+            <asp:Literal ID="litDetalle" runat="server" Mode="Encode" /></h2>
+        <p class="field-help">
+            <asp:Literal ID="litDatos" runat="server" Mode="Encode" /></p>
+        <asp:HyperLink ID="lnkComprobante" runat="server" Text="Ver comprobante de préstamo" CssClass="button link-button" />
+        <asp:HyperLink ID="lnkDevolucion" runat="server" Text="Ver comprobante de devolución" CssClass="button link-button" Visible="false" />
+        <asp:Panel ID="pnlDevolver" runat="server" DefaultButton="btnCalcular">
+            <table class="editor-table" role="presentation">
+                <tr>
+                    <td class="field-label">
+                        <asp:Label ID="lblRetorno" runat="server" AssociatedControlID="txtRetorno" Text="Fecha de devolución" /></td>
+                    <td>
+                        <asp:TextBox ID="txtRetorno" runat="server" TextMode="Date" CssClass="input-field" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:Button ID="btnCalcular" runat="server" Text="Calcular devolución" CssClass="button" /></td>
+                </tr>
+            </table>
+            <asp:Panel ID="pnlConfirmar" runat="server" Visible="false" CssClass="confirm-panel">
+                <p>
+                    <asp:Literal ID="litCalculo" runat="server" Mode="Encode" /></p>
+                <asp:Button ID="btnDevolver" runat="server" Text="Confirmar devolución" CssClass="button primary" /></asp:Panel>
+        </asp:Panel>
+        <asp:Button ID="btnCerrar" runat="server" Text="Cerrar detalle" CssClass="button" />
+    </asp:Panel>
+    <div class="table-scroll">
+        <asp:GridView ID="grvDatos" runat="server" AutoGenerateColumns="false" DataKeyNames="IdPrestamo" CssClass="data-table" GridLines="None" AllowPaging="true" PageSize="15" EmptyDataText="No se encontraron préstamos." ShowHeaderWhenEmpty="true">
+            <Columns>
+                <asp:ButtonField CommandName="Select" Text="Detalle / devolución" />
+                <asp:BoundField DataField="IdPrestamo" HeaderText="N.º" />
+                <asp:BoundField DataField="NombreLector" HeaderText="Lector" />
+                <asp:BoundField DataField="TituloLibro" HeaderText="Libros" />
+                <asp:BoundField DataField="Ejemplares" HeaderText="Ejemplares" />
+                <asp:BoundField DataField="FechaFin" HeaderText="Límite" DataFormatString="{0:dd/MM/yyyy}" />
+                <asp:BoundField DataField="FechaRetorno" HeaderText="Devolución" DataFormatString="{0:dd/MM/yyyy}" />
+                <asp:BoundField DataField="Estado" HeaderText="Estado" />
+            </Columns>
+            <PagerStyle CssClass="grid-pager" />
+        </asp:GridView>
+    </div>
 </asp:Content>

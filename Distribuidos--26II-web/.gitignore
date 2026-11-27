@@ -1,0 +1,2 @@
+# Configuración local de Google reCAPTCHA: incluye la clave secreta.
+appWEB Distribuidos/App_Data/recaptcha.config

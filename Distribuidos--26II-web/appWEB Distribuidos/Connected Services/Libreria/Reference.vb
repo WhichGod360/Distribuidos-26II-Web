@@ -40,26 +40,11 @@ Namespace Libreria
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/RevisarReporteYape", ReplyAction:="*")>  _
         Function RevisarReporteYapeAsync(ByVal idReporte As Integer, ByVal confirmar As Boolean, ByVal ingresoVerificado As Boolean, ByVal motivo As String) As System.Threading.Tasks.Task
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/PagoDemoDisponible", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
-        Function PagoDemoDisponible() As Boolean
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/PagoDemoDisponible", ReplyAction:="*")>  _
-        Function PagoDemoDisponibleAsync() As System.Threading.Tasks.Task(Of Boolean)
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/EmitirTokenPagoDemo", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
-        Function EmitirTokenPagoDemo(ByVal idCargo As Integer) As String
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/EmitirTokenPagoDemo", ReplyAction:="*")>  _
-        Function EmitirTokenPagoDemoAsync(ByVal idCargo As Integer) As System.Threading.Tasks.Task(Of String)
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ProcesarPagoDemo", ReplyAction:="*"),  _
-         System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
-        Function ProcesarPagoDemo(ByVal token As String, ByVal confirmar As Boolean) As Libreria.ResultadoPagoDemoSoap
         
-        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/ProcesarPagoDemo", ReplyAction:="*")>  _
-        Function ProcesarPagoDemoAsync(ByVal token As String, ByVal confirmar As Boolean) As System.Threading.Tasks.Task(Of Libreria.ResultadoPagoDemoSoap)
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/HelloWorld", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
@@ -635,53 +620,6 @@ Namespace Libreria
         Function RegistrarReporteYapeAsync(ByVal idCargo As Integer, ByVal importe As Decimal, ByVal nombre As String, ByVal celular As String, ByVal codigo As String) As System.Threading.Tasks.Task
     End Interface
     
-    '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.10008.0"),  _
-     System.SerializableAttribute(),  _
-     System.Diagnostics.DebuggerStepThroughAttribute(),  _
-     System.ComponentModel.DesignerCategoryAttribute("code"),  _
-     System.Xml.Serialization.XmlTypeAttribute([Namespace]:="http://tempuri.org/")>  _
-    Partial Public Class ResultadoPagoDemoSoap
-        Inherits Object
-        Implements System.ComponentModel.INotifyPropertyChanged
-        
-        Private idCargoField As Integer
-        
-        Private pagoNuevoField As Boolean
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=0)>  _
-        Public Property IdCargo() As Integer
-            Get
-                Return Me.idCargoField
-            End Get
-            Set
-                Me.idCargoField = value
-                Me.RaisePropertyChanged("IdCargo")
-            End Set
-        End Property
-        
-        '''<remarks/>
-        <System.Xml.Serialization.XmlElementAttribute(Order:=1)>  _
-        Public Property PagoNuevo() As Boolean
-            Get
-                Return Me.pagoNuevoField
-            End Get
-            Set
-                Me.pagoNuevoField = value
-                Me.RaisePropertyChanged("PagoNuevo")
-            End Set
-        End Property
-        
-        Public Event PropertyChanged As System.ComponentModel.PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-        
-        Protected Sub RaisePropertyChanged(ByVal propertyName As String)
-            Dim propertyChanged As System.ComponentModel.PropertyChangedEventHandler = Me.PropertyChangedEvent
-            If (Not (propertyChanged) Is Nothing) Then
-                propertyChanged(Me, New System.ComponentModel.PropertyChangedEventArgs(propertyName))
-            End If
-        End Sub
-    End Class
     
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.10008.0"),  _
@@ -4073,29 +4011,11 @@ Namespace Libreria
             Return MyBase.Channel.RevisarReporteYapeAsync(idReporte, confirmar, ingresoVerificado, motivo)
         End Function
         
-        Public Function PagoDemoDisponible() As Boolean Implements Libreria.swBibliotecaSoap.PagoDemoDisponible
-            Return MyBase.Channel.PagoDemoDisponible
-        End Function
         
-        Public Function PagoDemoDisponibleAsync() As System.Threading.Tasks.Task(Of Boolean) Implements Libreria.swBibliotecaSoap.PagoDemoDisponibleAsync
-            Return MyBase.Channel.PagoDemoDisponibleAsync
-        End Function
         
-        Public Function EmitirTokenPagoDemo(ByVal idCargo As Integer) As String Implements Libreria.swBibliotecaSoap.EmitirTokenPagoDemo
-            Return MyBase.Channel.EmitirTokenPagoDemo(idCargo)
-        End Function
         
-        Public Function EmitirTokenPagoDemoAsync(ByVal idCargo As Integer) As System.Threading.Tasks.Task(Of String) Implements Libreria.swBibliotecaSoap.EmitirTokenPagoDemoAsync
-            Return MyBase.Channel.EmitirTokenPagoDemoAsync(idCargo)
-        End Function
         
-        Public Function ProcesarPagoDemo(ByVal token As String, ByVal confirmar As Boolean) As Libreria.ResultadoPagoDemoSoap Implements Libreria.swBibliotecaSoap.ProcesarPagoDemo
-            Return MyBase.Channel.ProcesarPagoDemo(token, confirmar)
-        End Function
         
-        Public Function ProcesarPagoDemoAsync(ByVal token As String, ByVal confirmar As Boolean) As System.Threading.Tasks.Task(Of Libreria.ResultadoPagoDemoSoap) Implements Libreria.swBibliotecaSoap.ProcesarPagoDemoAsync
-            Return MyBase.Channel.ProcesarPagoDemoAsync(token, confirmar)
-        End Function
         
         Public Function HelloWorld() As String Implements Libreria.swBibliotecaSoap.HelloWorld
             Return MyBase.Channel.HelloWorld

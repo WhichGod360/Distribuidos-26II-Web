@@ -1,2 +1,72 @@
 <%@ Page Language="VB" AutoEventWireup="false" CodeBehind="wfRecuperar.aspx.vb" Inherits="appWEB_Distribuidos.RecuperarClave" %>
-<!DOCTYPE html><html lang="es"><head runat="server"><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Recuperar contraseña · Lecturae</title><link rel="stylesheet" href="../Estilos/biblioteca.css" /></head><body class="auth-body"><form id="form1" runat="server"><table class="auth-layout" role="presentation"><tr><td class="auth-brand"><img src="../Recursos/lecturae.png" alt="Lecturae" /><h1>Recupera tu acceso</h1><p>Verifica tu respuesta de seguridad.</p></td><td class="auth-form"><h2>Recuperar contraseña</h2><asp:Label ID="lblMensaje" runat="server" Visible="false" role="alert" /><asp:Panel ID="pnlCorreo" runat="server"><table class="editor-table" role="presentation"><tr><td><asp:Label ID="lblCorreo" runat="server" AssociatedControlID="txtCorreo" Text="Correo electrónico" /><asp:TextBox ID="txtCorreo" runat="server" TextMode="Email" MaxLength="100" CssClass="input-field" /></td></tr><tr><td><asp:Button ID="btnPregunta" runat="server" Text="Consultar pregunta" CssClass="button primary" /></td></tr></table></asp:Panel><asp:Panel ID="pnlRespuesta" runat="server" Visible="false"><p class="security-question"><asp:Literal ID="litPregunta" runat="server" Mode="Encode" /></p><table class="editor-table" role="presentation"><tr><td><asp:Label ID="lblRespuesta" runat="server" AssociatedControlID="txtRespuesta" Text="Respuesta de seguridad" /><asp:TextBox ID="txtRespuesta" runat="server" TextMode="Password" MaxLength="200" CssClass="input-field" autocomplete="off" /></td></tr><tr><td><asp:Button ID="btnVerificar" runat="server" Text="Verificar respuesta" CssClass="button primary" /></td></tr></table></asp:Panel><asp:Panel ID="pnlNueva" runat="server" Visible="false"><p>La verificación vence en cinco minutos.</p><table class="editor-table" role="presentation"><tr><td><asp:Label ID="lblNueva" runat="server" AssociatedControlID="txtNueva" Text="Nueva contraseña" /><asp:TextBox ID="txtNueva" runat="server" TextMode="Password" MaxLength="128" CssClass="input-field" autocomplete="new-password" /></td></tr><tr><td><asp:Label ID="lblConfirmar" runat="server" AssociatedControlID="txtConfirmar" Text="Confirmar contraseña" /><asp:TextBox ID="txtConfirmar" runat="server" TextMode="Password" MaxLength="128" CssClass="input-field" autocomplete="new-password" /></td></tr><tr><td><p class="field-help">Entre 8 y 128 caracteres, una mayúscula y un número.</p><asp:Button ID="btnGuardar" runat="server" Text="Guardar contraseña" CssClass="button primary" /></td></tr></table></asp:Panel><p><asp:Button ID="btnCancelar" runat="server" Text="Volver al inicio de sesión" CssClass="button" CausesValidation="false" /></p></td></tr></table></form></body></html>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recuperar contraseña · Lecturae</title>
+    <link rel="stylesheet" href="../Estilos/biblioteca.css" />
+</head>
+<body class="auth-body">
+    <form id="form1" runat="server">
+        <table class="auth-layout" role="presentation">
+            <tr>
+                <td class="auth-brand">
+                    <img src="../Recursos/lecturae.png" alt="Lecturae" /><h1>Recupera tu acceso</h1>
+                    <p>Verifica tu respuesta de seguridad.</p>
+                </td>
+                <td class="auth-form">
+                    <h2>Recuperar contraseña</h2>
+                    <asp:Label ID="lblMensaje" runat="server" Visible="false" role="alert" /><asp:Panel ID="pnlCorreo" runat="server">
+                        <table class="editor-table" role="presentation">
+                            <tr>
+                                <td>
+                                    <asp:Label ID="lblCorreo" runat="server" AssociatedControlID="txtCorreo" Text="Correo electrónico" /><asp:TextBox ID="txtCorreo" runat="server" TextMode="Email" MaxLength="100" CssClass="input-field" /></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Button ID="btnPregunta" runat="server" Text="Consultar pregunta" CssClass="button primary" /></td>
+                            </tr>
+                        </table>
+                    </asp:Panel>
+                    <asp:Panel ID="pnlRespuesta" runat="server" Visible="false">
+                        <p class="security-question">
+                            <asp:Literal ID="litPregunta" runat="server" Mode="Encode" /></p>
+                        <table class="editor-table" role="presentation">
+                            <tr>
+                                <td>
+                                    <asp:Label ID="lblRespuesta" runat="server" AssociatedControlID="txtRespuesta" Text="Respuesta de seguridad" /><asp:TextBox ID="txtRespuesta" runat="server" TextMode="Password" MaxLength="200" CssClass="input-field" autocomplete="off" /></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Button ID="btnVerificar" runat="server" Text="Verificar respuesta" CssClass="button primary" /></td>
+                            </tr>
+                        </table>
+                    </asp:Panel>
+                    <asp:Panel ID="pnlNueva" runat="server" Visible="false">
+                        <p>La verificación vence en cinco minutos.</p>
+                        <table class="editor-table" role="presentation">
+                            <tr>
+                                <td>
+                                    <asp:Label ID="lblNueva" runat="server" AssociatedControlID="txtNueva" Text="Nueva contraseña" /><asp:TextBox ID="txtNueva" runat="server" TextMode="Password" MaxLength="128" CssClass="input-field" autocomplete="new-password" /></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="lblConfirmar" runat="server" AssociatedControlID="txtConfirmar" Text="Confirmar contraseña" /><asp:TextBox ID="txtConfirmar" runat="server" TextMode="Password" MaxLength="128" CssClass="input-field" autocomplete="new-password" /></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="field-help">Entre 8 y 128 caracteres, una mayúscula y un número.</p>
+                                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar contraseña" CssClass="button primary" /></td>
+                            </tr>
+                        </table>
+                    </asp:Panel>
+                    <p>
+                        <asp:Button ID="btnCancelar" runat="server" Text="Volver al inicio de sesión" CssClass="button" CausesValidation="false" /></p>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>capaConexion</RootNamespace>
+    <TargetFramework>net472</TargetFramework>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="../../../../Distribuidos-26II-escritorio/Distribuidos-2026II/capaConexion/*.vb" Link="%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>

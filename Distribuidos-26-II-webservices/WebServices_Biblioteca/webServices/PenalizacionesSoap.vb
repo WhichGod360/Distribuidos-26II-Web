@@ -84,7 +84,7 @@ Partial Public Class swBiblioteca
         Else
             seguridadNegocio.ExigirLector()
         End If
-        Return (SesionUsuario.EsPersonal OrElse Not pagoYapeNegocio.ModoDemoSolicitado()) AndAlso pagosYape.Disponible()
+        Return pagosYape.Disponible()
     End Function
 
     <WebMethod(EnableSession:=True)>

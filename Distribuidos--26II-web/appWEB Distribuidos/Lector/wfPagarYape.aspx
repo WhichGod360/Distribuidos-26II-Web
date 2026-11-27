@@ -1,10 +1,12 @@
 <%@ Page Title="Pagar penalización · Lecturae" Language="VB" AutoEventWireup="false" MasterPageFile="~/pagWeb.Master" CodeBehind="wfPagarYape.aspx.vb" Inherits="appWEB_Distribuidos.PagarYapeWeb" %>
+
 <asp:Content ID="Contenido" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:HyperLink runat="server" NavigateUrl="~/Lector/wfMiBiblioteca.aspx?vista=cargos" Text="Volver a Mis penalizaciones" />
     <h1>Pagar penalización</h1>
     <asp:Label ID="lblMensaje" runat="server" Visible="false" role="alert" />
     <asp:Panel ID="pnlCargo" runat="server" Visible="false">
-        <p class="summary-strip"><asp:Literal ID="litCargo" runat="server" Mode="Encode" /></p>
+        <p class="summary-strip">
+            <asp:Literal ID="litCargo" runat="server" Mode="Encode" /></p>
         <asp:Panel ID="pnlPago" runat="server" Visible="false" CssClass="editor-panel" DefaultButton="btnEnviar">
             <div class="yape-layout">
                 <section>
@@ -24,26 +26,21 @@
                 </section>
             </div>
         </asp:Panel>
-        <asp:Panel ID="pnlDemo" runat="server" Visible="false" CssClass="editor-panel">
-            <h2>Pago de demostración</h2>
-            <p>Escanea el QR y abre el enlace. La confirmación es simulada y no transfiere dinero.</p>
-            <asp:Image ID="imgPagoDemo" runat="server" CssClass="yape-qr" AlternateText="QR de pago de demostración" />
-            <p><asp:HyperLink ID="lnkPagoDemo" runat="server" Text="Abrir demostración en este dispositivo" /></p>
-        </asp:Panel>
         <asp:Panel ID="pnlHistorial" runat="server" Visible="false">
-        <h2>Historial de reportes</h2>
-        <div class="table-scroll">
-            <asp:GridView ID="grvHistorial" runat="server" AutoGenerateColumns="false" CssClass="data-table" GridLines="None" EmptyDataText="Aún no has reportado un pago por Yape para este cargo.">
-                <Columns>
-                    <asp:BoundField DataField="IdPago" HeaderText="Reporte" />
-                    <asp:BoundField DataField="FechaReporte" HeaderText="Enviado (hora de Perú)" DataFormatString="{0:dd/MM/yyyy HH:mm}" />
-                    <asp:BoundField DataField="Monto" HeaderText="Importe" DataFormatString="S/ {0:N2}" />
-                    <asp:BoundField DataField="Estado" HeaderText="Estado" />
-                    <asp:BoundField DataField="Motivo" HeaderText="Motivo de denegación" />
-                </Columns>
-            </asp:GridView>
-        </div>
-        <p><asp:HyperLink runat="server" NavigateUrl="~/Lector/wfMiBiblioteca.aspx?vista=avisos" Text="Ver avisos" /></p>
+            <h2>Historial de reportes</h2>
+            <div class="table-scroll">
+                <asp:GridView ID="grvHistorial" runat="server" AutoGenerateColumns="false" CssClass="data-table" GridLines="None" EmptyDataText="Aún no has reportado un pago por Yape para este cargo.">
+                    <Columns>
+                        <asp:BoundField DataField="IdPago" HeaderText="Reporte" />
+                        <asp:BoundField DataField="FechaReporte" HeaderText="Enviado (hora de Perú)" DataFormatString="{0:dd/MM/yyyy HH:mm}" />
+                        <asp:BoundField DataField="Monto" HeaderText="Importe" DataFormatString="S/ {0:N2}" />
+                        <asp:BoundField DataField="Estado" HeaderText="Estado" />
+                        <asp:BoundField DataField="Motivo" HeaderText="Motivo de denegación" />
+                    </Columns>
+                </asp:GridView>
+            </div>
+            <p>
+                <asp:HyperLink runat="server" NavigateUrl="~/Lector/wfMiBiblioteca.aspx?vista=avisos" Text="Ver avisos" /></p>
         </asp:Panel>
     </asp:Panel>
 </asp:Content>

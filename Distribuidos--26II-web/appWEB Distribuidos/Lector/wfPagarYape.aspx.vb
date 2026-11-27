@@ -25,21 +25,15 @@ Public Class PagarYapeWeb
         Dim estado = cargo.Field(Of String)("Estado")
         Dim monto = cargo.Field(Of Decimal)("Monto")
         Dim pendiente = estado = DetallePenalizacion.PagoPendiente AndAlso monto > 0D
-        Dim demo = WS.PagoDemoDisponible()
         Dim yape = WS.PagoYapeDisponible() AndAlso ImagenYape.Configurada(Context)
         litCargo.Text = $"Cargo N.º {RegistroId} · {cargo.Field(Of String)("Libro")} · " &
             FormulariosWeb.Dinero(monto) & " · " & If(estado = DetallePenalizacion.PagoPorRevisar, "Por revisar", estado)
         pnlCargo.Visible = True
         pnlPago.Visible = yape AndAlso pendiente
-        pnlDemo.Visible = demo AndAlso pendiente
         pnlHistorial.Visible = yape
         ViewState("ImportePago") = monto
 
-        If pnlDemo.Visible Then
-            Dim destino = PagoDemoWeb.CrearEnlace(Context, WS.EmitirTokenPagoDemo(RegistroId))
-            imgPagoDemo.ImageUrl = PagoDemoWeb.Imagen(destino)
-            lnkPagoDemo.NavigateUrl = destino
-        ElseIf yape Then
+        If yape Then
             grvHistorial.DataSource = WS.ConsultarMiHistorialYape(RegistroId)
             grvHistorial.DataBind()
         ElseIf pendiente Then

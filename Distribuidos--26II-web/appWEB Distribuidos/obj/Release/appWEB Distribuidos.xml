@@ -37,15 +37,6 @@ appWEB Distribuidos
  Devuelve el objeto de registro Asp.
  </summary>
 </member>
-<member name="T:appWEB_Distribuidos.Libreria.ResultadoPagoDemoSoap">
-<remarks/>
-</member>
-<member name="P:appWEB_Distribuidos.Libreria.ResultadoPagoDemoSoap.IdCargo">
-<remarks/>
-</member>
-<member name="P:appWEB_Distribuidos.Libreria.ResultadoPagoDemoSoap.PagoNuevo">
-<remarks/>
-</member>
 <member name="T:appWEB_Distribuidos.Libreria.PrestamoResumen">
 <remarks/>
 </member>
@@ -657,6 +648,87 @@ appWEB Distribuidos
 </member>
 <member name="P:appWEB_Distribuidos.Libreria.UsuarioSoap.NombreRol">
 <remarks/>
+</member>
+<member name="F:appWEB_Distribuidos.Login._form1">
+<summary>
+Control form1.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:appWEB_Distribuidos.Login._lblMensaje">
+<summary>
+Control lblMensaje.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:appWEB_Distribuidos.Login._lblCorreo">
+<summary>
+Control lblCorreo.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:appWEB_Distribuidos.Login._txtCorreo">
+<summary>
+Control txtCorreo.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:appWEB_Distribuidos.Login._lblClave">
+<summary>
+Control lblClave.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:appWEB_Distribuidos.Login._txtClave">
+<summary>
+Control txtClave.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:appWEB_Distribuidos.Login._captchaContenedor">
+<summary>
+Control captchaContenedor.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:appWEB_Distribuidos.Login._btnIngresar">
+<summary>
+Control btnIngresar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
+</member>
+<member name="F:appWEB_Distribuidos.Login._lnkRecuperar">
+<summary>
+Control lnkRecuperar.
+</summary>
+<remarks>
+Campo generado automáticamente.
+Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+</remarks>
 </member>
 </members>
 </doc>

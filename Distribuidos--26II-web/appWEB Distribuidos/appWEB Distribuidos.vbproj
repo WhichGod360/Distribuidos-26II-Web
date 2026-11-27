@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -52,6 +52,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
@@ -153,9 +154,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.PrestamoResumen.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.ResultadoPagoDemoSoap.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\Libreria\appWEB_Distribuidos.Libreria.ResumenPenalizaciones.datasource">
@@ -297,6 +295,8 @@
   <ItemGroup>
     <Compile Include="Global.asax.vb" />
     <Compile Include="Comun\ServicioBiblioteca.vb" />
+    <Compile Include="Comun\RecaptchaWeb.vb" />
+
     <Compile Include="Comun\PresentacionSoap.vb" />
     <Content Include="Global.asax" />
     <Content Include="Default.aspx" />
@@ -474,17 +474,11 @@
     <Content Include="Scripts\biblioteca.js" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="QRCoder">
-      <HintPath>..\Bibliotecas\QRCoder.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Compile Include="Comun\PagoWeb.vb" />
     <Compile Include="..\..\Distribuidos-26II-escritorio\Distribuidos-2026II\capaInterfaz\RecorteQrYape.vb">
       <Link>Comun\RecorteQrYape.vb</Link>
     </Compile>
     <Content Include="Lector\YapeQr.ashx" />
-    <Content Include="Lector\PagoDemo.ashx" />
-    <Content Include="Scripts\pago-demo.js" />
     <Content Include="App_Data\YapeQr.png" />
     <Content Include="Lector\wfPagarYape.aspx" />
     <Compile Include="Lector\wfPagarYape.aspx.vb">

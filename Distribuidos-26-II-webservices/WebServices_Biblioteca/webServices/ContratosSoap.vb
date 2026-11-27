@@ -42,7 +42,3 @@ Public Class BibliotecaLectorSoap
     Public Property LibrosAgregables As Integer()
 End Class
 
-Public Class ResultadoPagoDemoSoap
-    Public Property IdCargo As Integer
-    Public Property PagoNuevo As Boolean
-End Class

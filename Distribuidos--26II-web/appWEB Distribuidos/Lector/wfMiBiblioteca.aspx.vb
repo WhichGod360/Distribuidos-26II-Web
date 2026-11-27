@@ -5,7 +5,6 @@ Public Class MiBiblioteca
 
     Private biblioteca As BibliotecaLectorSoap
     Private seleccion As List(Of Libro)
-    Private demoPago As Boolean
     Private pagoYape As Boolean
 
     Private ReadOnly Property Vista As String
@@ -74,7 +73,6 @@ Public Class MiBiblioteca
                 grvPrestamos.DataSource = biblioteca.Prestamos.Select(Function(p) New With {p.IdPrestamo, p.TituloLibro, p.Ejemplares, p.FechaInicio, p.FechaFin, p.FechaRetorno, .Estado = p.EstadoTexto}).ToList()
                 grvPrestamos.DataBind()
             Case "cargos"
-                demoPago = WS.PagoDemoDisponible()
                 pagoYape = WS.PagoYapeDisponible() AndAlso ImagenYape.Configurada(Context)
                 litCargos.Text = "Total: " & FormulariosWeb.Dinero(biblioteca.Cargos.Total) & " · Pendiente: " & FormulariosWeb.Dinero(biblioteca.Cargos.Pendiente) & " · Por revisar: " & FormulariosWeb.Dinero(biblioteca.Cargos.PorRevisar) & " · Pagado: " & FormulariosWeb.Dinero(biblioteca.Cargos.Pagado)
                 grvCargos.DataSource = biblioteca.Cargos.Detalles.Where(Function(d) ddlPago.SelectedValue = "" OrElse d.EstadoPago = ddlPago.SelectedValue).ToList()
@@ -92,7 +90,7 @@ Public Class MiBiblioteca
 
     Protected Function PuedeConsultarPago(datos As Object) As Boolean
         Dim cargo = DirectCast(datos, DetallePenalizacion)
-        Return pagoYape OrElse (demoPago AndAlso cargo.EstadoPago = DetallePenalizacion.PagoPendiente AndAlso cargo.MontoPenalizacion > 0D)
+        Return pagoYape
     End Function
 
     Private Sub Volver(vistaDestino As String, mensaje As String)

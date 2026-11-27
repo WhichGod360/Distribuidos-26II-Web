@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Operaciones de Lecturae</wsdl:documentation>
   <wsdl:types>
@@ -59,51 +59,13 @@
       <s:element name="RevisarReporteYapeResponse">
         <s:complexType />
       </s:element>
-      <s:element name="PagoDemoDisponible">
-        <s:complexType />
-      </s:element>
-      <s:element name="PagoDemoDisponibleResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="PagoDemoDisponibleResult" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="EmitirTokenPagoDemo">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="idCargo" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="EmitirTokenPagoDemoResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="EmitirTokenPagoDemoResult" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ProcesarPagoDemo">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="confirmar" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ProcesarPagoDemoResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ProcesarPagoDemoResult" type="tns:ResultadoPagoDemoSoap" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:complexType name="ResultadoPagoDemoSoap">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="IdCargo" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="PagoNuevo" type="s:boolean" />
-        </s:sequence>
-      </s:complexType>
+      
+      
+      
+      
+      
+      
+      
       <s:element name="HelloWorld">
         <s:complexType />
       </s:element>
@@ -1628,24 +1590,12 @@
   <wsdl:message name="RevisarReporteYapeSoapOut">
     <wsdl:part name="parameters" element="tns:RevisarReporteYapeResponse" />
   </wsdl:message>
-  <wsdl:message name="PagoDemoDisponibleSoapIn">
-    <wsdl:part name="parameters" element="tns:PagoDemoDisponible" />
-  </wsdl:message>
-  <wsdl:message name="PagoDemoDisponibleSoapOut">
-    <wsdl:part name="parameters" element="tns:PagoDemoDisponibleResponse" />
-  </wsdl:message>
-  <wsdl:message name="EmitirTokenPagoDemoSoapIn">
-    <wsdl:part name="parameters" element="tns:EmitirTokenPagoDemo" />
-  </wsdl:message>
-  <wsdl:message name="EmitirTokenPagoDemoSoapOut">
-    <wsdl:part name="parameters" element="tns:EmitirTokenPagoDemoResponse" />
-  </wsdl:message>
-  <wsdl:message name="ProcesarPagoDemoSoapIn">
-    <wsdl:part name="parameters" element="tns:ProcesarPagoDemo" />
-  </wsdl:message>
-  <wsdl:message name="ProcesarPagoDemoSoapOut">
-    <wsdl:part name="parameters" element="tns:ProcesarPagoDemoResponse" />
-  </wsdl:message>
+  
+  
+  
+  
+  
+  
   <wsdl:message name="HelloWorldSoapIn">
     <wsdl:part name="parameters" element="tns:HelloWorld" />
   </wsdl:message>
@@ -2145,18 +2095,9 @@
       <wsdl:input message="tns:RevisarReporteYapeSoapIn" />
       <wsdl:output message="tns:RevisarReporteYapeSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="PagoDemoDisponible">
-      <wsdl:input message="tns:PagoDemoDisponibleSoapIn" />
-      <wsdl:output message="tns:PagoDemoDisponibleSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="EmitirTokenPagoDemo">
-      <wsdl:input message="tns:EmitirTokenPagoDemoSoapIn" />
-      <wsdl:output message="tns:EmitirTokenPagoDemoSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ProcesarPagoDemo">
-      <wsdl:input message="tns:ProcesarPagoDemoSoapIn" />
-      <wsdl:output message="tns:ProcesarPagoDemoSoapOut" />
-    </wsdl:operation>
+    
+    
+    
     <wsdl:operation name="HelloWorld">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Comprueba el arranque del servicio.</wsdl:documentation>
       <wsdl:input message="tns:HelloWorldSoapIn" />
@@ -2514,33 +2455,9 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PagoDemoDisponible">
-      <soap:operation soapAction="http://tempuri.org/PagoDemoDisponible" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EmitirTokenPagoDemo">
-      <soap:operation soapAction="http://tempuri.org/EmitirTokenPagoDemo" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ProcesarPagoDemo">
-      <soap:operation soapAction="http://tempuri.org/ProcesarPagoDemo" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
+    
+    
+    
     <wsdl:operation name="HelloWorld">
       <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
       <wsdl:input>
@@ -3300,33 +3217,9 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PagoDemoDisponible">
-      <soap12:operation soapAction="http://tempuri.org/PagoDemoDisponible" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EmitirTokenPagoDemo">
-      <soap12:operation soapAction="http://tempuri.org/EmitirTokenPagoDemo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ProcesarPagoDemo">
-      <soap12:operation soapAction="http://tempuri.org/ProcesarPagoDemo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
+    
+    
+    
     <wsdl:operation name="HelloWorld">
       <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
       <wsdl:input>
